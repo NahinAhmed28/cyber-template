@@ -1,0 +1,839 @@
+{{> head pageTitle='File Manager Page' pageCss='
+	<link href="assets/plugins/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+'}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-header-fixed app-sidebar-fixed app-content-full-height">
+		{{> app-header }}
+		
+		{{> app-sidebar pagesClass=' active' fileManagerClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<div class="app-content-header">
+				<div class="page-header">
+					File Manager <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="flex-1">
+					<div class="file-manager h-100" id="fileManager">
+						<div class="file-manager-toolbar">
+							 <button type="button" class="btn border-0 text-uppercase"><i class="bi bi-plus-lg me-1 opacity-5"></i> File</button>
+							 <button type="button" class="btn border-0 text-uppercase"><i class="bi bi-plus-lg me-1 opacity-5"></i> Folder</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-copy"></i> Copy</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-arrows-move"></i> Move</button>
+							 <button type="button" class="btn border-0 text-uppercase"><i class="bi me-1 opacity-5 bi-upload"></i> Upload</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-download"></i> Download</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-trash"></i> Delete</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-arrow-clockwise"></i> Restore</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-file-earmark-text"></i> Rename</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-pen"></i> Edit</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-pencil-square"></i> HTML Editor</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-key"></i> Permissions</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-eye"></i> View</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-unlock"></i> Extract</button>
+							 <button type="button" class="btn border-0 text-uppercase" disabled><i class="bi me-1 opacity-5 bi-file-earmark-zip"></i> Compress</button>
+						</div>
+						<div class="file-manager-container">
+							<div class="file-manager-sidebar">
+								<div class="file-manager-sidebar-mobile-toggler">
+									<button type="button" class="btn" data-toggle-class="file-manager-sidebar-mobile-toggled" data-toggle-target="#fileManager"><i class="far fa-lg fa-folder"></i></button>
+								</div>
+								<div class="p-3 border-bottom">
+									<input type="text" class="form-control form-control-sm" placeholder="SEARCH FILE..." />
+								</div>
+								<div class="file-manager-sidebar-content">
+									<div data-scrollbar="true" data-height="100%" class="p-3">
+										<div class="file-tree mb-3">
+											<div class="file-node has-sub expand selected">
+												<a href="javascript:;" class="file-link">
+													<span class="file-arrow"></span>
+													<span class="file-info">
+														<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+														<span class="file-text">public_html</span>
+													</span>
+												</a>
+												<div class="file-tree">
+													<div class="file-node has-sub">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																<span class="file-text">services</span>
+															</span>
+														</a>
+														<div class="file-tree">
+															<div class="file-node has-sub">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																		<span class="file-text">app_development</span>
+																	</span>
+																</a>
+																<div class="file-tree">
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">index.html</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">android_app.html</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">ios_app.html</span>
+																			</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+															<div class="file-node has-sub">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																		<span class="file-text">digital_marketing</span>
+																	</span>
+																</a>
+																<div class="file-tree">
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">index.html</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">social_media.html</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">seo.html</span>
+																			</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">index.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">web_design.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">seo_services.html</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="file-node has-sub">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																<span class="file-text">portfolio</span>
+															</span>
+														</a>
+														<div class="file-tree">
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">index.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">project_1.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">project_2.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">project_3.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">project_4.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">project_5.html</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="file-node has-sub">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																<span class="file-text">blog</span>
+															</span>
+														</a>
+														<div class="file-tree">
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">index.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">post_1.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">post_2.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">post_3.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">post_4.html</span>
+																	</span>
+																</a>
+															</div>
+															<div class="file-node">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																		<span class="file-text">post_5.html</span>
+																	</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="file-node has-sub">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																<span class="file-text">assets</span>
+															</span>
+														</a>
+														<div class="file-tree">
+															<div class="file-node has-sub">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																		<span class="file-text">css</span>
+																	</span>
+																</a>
+																<div class="file-tree">
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">styles.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">main.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">responsive.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">typography.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">colors.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">layout.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">animations.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">forms.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">buttons.css</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">grids.css</span>
+																			</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+															<div class="file-node has-sub">
+																<a href="javascript:;" class="file-link">
+																	<span class="file-arrow"></span>
+																	<span class="file-info">
+																		<span class="file-icon"><i class="fa fa-folder fa-lg text-warning"></i></span>
+																		<span class="file-text">js</span>
+																	</span>
+																</a>
+																<div class="file-tree">
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">main.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">script.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">sliders.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">gallery.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">form-validation.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">animations.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">navigation.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">modal.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">tabs.js</span>
+																			</span>
+																		</a>
+																	</div>
+																	<div class="file-node">
+																		<a href="javascript:;" class="file-link">
+																			<span class="file-arrow"></span>
+																			<span class="file-info">
+																				<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																				<span class="file-text">accordion.js</span>
+																			</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">index.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">home.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">about.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">contact.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">testimonials.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">faq.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">pricing.html</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-code fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">404.shtml</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="fa fa-file-text fa-lg text-body text-opacity-50"></i></span>
+																<span class="file-text">.htaccess</span>
+															</span>
+														</a>
+													</div>
+													<div class="file-node">
+														<a href="javascript:;" class="file-link">
+															<span class="file-arrow"></span>
+															<span class="file-info">
+																<span class="file-icon"><i class="far fa-file-image fa-lg text-success"></i></span>
+																<span class="file-text">favicon.ico</span>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="file-manager-sidebar-footer">
+									<div class="d-flex gap-2 align-items-center">
+										<div>
+											<iconify-icon class="fa-3x text-body" icon="solar:ssd-square-bold-duotone"></iconify>
+										</div>
+										<div class="flex-1 small">
+											<div class="fw-semibold">SSD STORAGE:</div>
+											<div class="progress my-1 h-4px">
+												<div class="progress-bar progress-bar-striped bg-white" style="width: 80%"></div>
+											</div>
+											<div class="fw-semibold text-body text-opacity-50">
+												<b class="text-body">127.7GB</b> free of <b class="text-body">256GB</b>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="file-manager-content d-flex flex-column">
+								<div class="d-flex gap-2 flex-wrap text-nowrap p-3 border-bottom">
+									<button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-house"></i></button>
+									<button type="button" class="btn btn-sm btn-outline-secondary" disabled><i class="fa fa-arrow-turn-up"></i> UP ONE LEVEL</button>
+							
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" disabled><i class="fa fa-arrow-left"></i> BACK</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" disabled>FORWARD <i class="fa fa-arrow-right"></i></button>
+									</div>
+									<button type="button" class="btn btn-sm btn-outline-secondary text-uppercase"><i class="fa fa-arrows-rotate"></i></button>
+							
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-outline-secondary text-uppercase"><i class="fa fa-check"></i> SELECT ALL</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary text-uppercase"><i class="fa fa-square"></i> UNSELECT ALL</button>
+									</div>
+								</div>
+								<div class="flex-1 overflow-hidden">
+									<div data-scrollbar="true" data-skip-mobile="true" data-height="100%" class="p-0">
+										<table class="table table-striped table-borderless table-sm m-0 text-nowrap">
+											<thead>
+												<tr class="border-bottom">
+													<th class="w-10px ps-10px"></th>
+													<th class="px-10px">Name</th>
+													<th class="px-10px w-100px">Size</th>
+													<th class="px-10px w-200px">Last Modified</th>
+													<th class="px-10px w-200px">Type</th>
+													<th class="px-10px w-100px">Permission</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">services</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:35PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">portfolio</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">blog</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:04PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">assets</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:14PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">php</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">docs</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">archives</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">video</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">audio</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-folder text-warning fa-lg"></i></td>
+													<td class="px-10px border-0">docs</td>
+													<td class="px-10px">4 KB</td>
+													<td class="px-10px">Jun 11, 2025, 10:36PM</td>
+													<td class="px-10px">http:/unix-directory</td>
+													<td class="px-10px border-0">0755</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">index.html</td>
+													<td class="px-10px">39.5 KB</td>
+													<td class="px-10px">July 05, 2025, 10:35PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">home.html</td>
+													<td class="px-10px">129.1 KB</td>
+													<td class="px-10px">July 06, 2025, 1:00PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">about.html</td>
+													<td class="px-10px">24 KB</td>
+													<td class="px-10px">July 01, 2025, 6:59AM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">contact.html</td>
+													<td class="px-10px">39.5 KB</td>
+													<td class="px-10px">July 05, 2025, 10:35PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">testimonials.html</td>
+													<td class="px-10px">11 KB</td>
+													<td class="px-10px">July 05, 2025, 10:35PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">faq.html</td>
+													<td class="px-10px">12 KB</td>
+													<td class="px-10px">July 05, 2025, 1.59PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">pricing.html</td>
+													<td class="px-10px">128 KB</td>
+													<td class="px-10px">July 05, 2025, 12.49PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-code text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">404.shtml</td>
+													<td class="px-10px">251 bytes</td>
+													<td class="px-10px">July 10, 2025, 10.35AM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="fa fa-file-text text-body text-opacity-50 fa-lg"></i></td>
+													<td class="px-10px border-0">.htaccess</td>
+													<td class="px-10px">128 KB</td>
+													<td class="px-10px">August 05, 2025, 12.49PM</td>
+													<td class="px-10px">text/html</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+												<tr>
+													<td class="ps-10px border-0 text-center"><i class="far fa-file-image text-teal fa-lg"></i></td>
+													<td class="px-10px border-0">favicon.ico</td>
+													<td class="px-10px">2 KB</td>
+													<td class="px-10px">July 05, 2025, 7.39AM</td>
+													<td class="px-10px">image/x-generic</td>
+													<td class="px-10px border-0">0644</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="assets/js/demo/file-manager.demo.js"></script>
+'}}

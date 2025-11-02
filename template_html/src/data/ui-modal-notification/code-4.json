@@ -1,0 +1,15 @@
+&lt;div class="toast" data-autohide="false"&gt;
+  &lt;div class="toast-header text-theme gap-2"&gt;
+    &lt;i class="fa fa-fw fa-bell opacity-5"&gt;&lt;/i&gt;
+    &lt;strong class="flex-1"&gt;BOOTSTRAP&lt;/strong&gt;
+    &lt;small class="text-muted"&gt;11 mins ago&lt;/small&gt;
+    &lt;button type="button" class="btn-close" data-bs-dismiss="toast"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast-body"&gt;
+    Hello, world! This is a toast message.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  $('.toast').toast('show');
+&lt;/script&gt;

@@ -1,0 +1,11 @@
+&lt;div id="app" class="app app-with-top-nav app-boxed-layout"&gt;
+  &lt;div id="appTopNav" class="app-top-nav"&gt;
+    ...
+  &lt;/div&gt;
+  
+  &lt;div id="appSidebar" class="app-sidebar"&gt;
+    ...
+  &lt;/div&gt;
+  
+  ...
+&lt;/div&gt;

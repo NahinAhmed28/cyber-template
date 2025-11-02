@@ -1,0 +1,702 @@
+{{> head pageTitle='AI Chat'}}
+	
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-content-full-height">
+		{{> app-header }}
+		
+		{{> app-sidebar aiStudioClass=' active' aiChatClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex">
+			<a class="d-lg-none btn btn-lg bg-inverse bg-opacity-15 bg-blur-2 text-body rounded-0 z-3 ms-1px mt-5 shadow-lg position-absolute top-0 start-0 " data-bs-toggle="offcanvas" href="#aiChatSidebar" role="button" aria-controls="offcanvasExample">
+				<i class="fa fa-gear"></i>
+			</a>
+			<!-- BEGIN ai-chat-sidebar -->
+			<div class="w-250px offcanvas offcanvas-start bg-none position-lg-relative transform-lg-none visibility-lg-initial z-lg-3" id="aiChatSidebar">
+				<!-- BEGIN ai-chat-sidebar-mobile-bg -->
+				<div class="d-lg-none bg-blur-3 d-block position-absolute top-0 end-0 w-100 h-100"></div>
+				<!-- END ai-chat-sidebar-mobile-bg -->
+				
+				<!-- BEGIN ai-chat-sidebar-content -->
+				<div class="position-relative h-100 d-flex flex-column">
+					<!-- BEGIN ai-chat-new-btn -->
+					<div class="p-3 border-bottom">
+						<button type="button" class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center" data-toggle-ai-tab="aiChatIntro">
+							NEW CHAT
+						</button>
+					</div>
+					<!-- END ai-chat-new-btn -->
+					
+					<!-- BEGIN ai-chat-history -->
+					<div class="flex-1 overflow-hidden text-body">
+						<!-- BEGIN scrollbar -->
+						<div data-scrollbar="true" class="p-3" data-height="100%">
+							<div class="fw-semibold mb-2 d-flex align-items-center gap-2">
+								<iconify-icon icon="solar:calendar-line-duotone" class="fs-3 text-body text-opacity-50 mb-2px"></iconify-icon> 
+								TODAY
+							</div>
+							<div class="ps-10px text-uppercase">
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Plan My Dream Vacation</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary d-none hover-show-elm me-n1"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Craft a Winning Pitch</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Organize My Day</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Write Custom Code</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Draft a Polished Email</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Brainstorm Ideas</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+							<div class="fw-semibold mt-3 mb-2 d-flex align-items-center gap-2">
+								<iconify-icon icon="solar:calendar-line-duotone" class="fs-3 text-body text-opacity-50 mb-2px"></iconify-icon>
+								1 WEEK AGO
+							</div>
+							<div class="ps-10px text-uppercase">
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Summarize an Article</div><a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Prepare for a Speech</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Create a Business Proposal</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="fw-semibold mt-3 mb-2 d-flex align-items-center gap-2">
+								<iconify-icon icon="solar:calendar-line-duotone" class="fs-3 text-body text-opacity-50 mb-2px"></iconify-icon> 
+								2 WEEKS AGO
+							</div>
+							<div class="ps-10px text-uppercase">
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Organize Project Tasks</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Research Market Trends</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Craft Social Media Posts</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Plan Weekly Schedule</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Review Client Feedback</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Design Landing Pages</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Analyze Performance Metrics</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Update Product Listings</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Write Blog Articles</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Optimize SEO Strategy</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Prepare Sales Reports</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Respond to Support Tickets</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+								<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold">
+									<div class="flex-1 text-body text-opacity-50">Brainstorm Campaign Ideas</div>
+									<a href="#" class="stretched-link" data-toggle-ai-tab="aiChatPrev"></a>
+									<div class="dropdown position-relative z-3">
+										<a href="#" data-bs-toggle="dropdown" class="link-secondary opacity-50 d-none hover-show-elm"><i class="fa fa-ellipsis"></i></a>
+										<div class="dropdown-menu">
+											<a href="#" class="dropdown-item">Share Chat</a>
+											<a href="#" class="dropdown-item">See Details</a>
+											<div class="dropdown-divider"></div>
+											<a href="#" class="dropdown-item">Rename</a>
+											<a href="#" class="dropdown-item">Archive</a>
+											<a href="#" class="dropdown-item">Delete</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END scrollbar -->
+					</div>
+					<!-- END ai-chat-history -->
+					
+					<hr class="m-0 opacity-20" />
+					
+					<!-- BEGIN ai-chat-info -->
+					<div class="fs-6 p-2 my-1 text-uppercase d-flex flex-column gap-1">
+						<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold gap-2">
+							<i class="far fa-folder fa-lg fa-fw ms-n2 text-body text-opacity-50"></i>
+							Explore Bots
+						</div>
+						<div class="position-relative hover-bg-light bg-opacity-15 hover-show py-1 px-3 mb-1 d-flex align-items-center fw-semibold gap-2">
+							<i class="far fa-gem fa-lg fa-fw ms-n2 text-body text-opacity-50"></i>
+							Go Pro
+						</div>
+					</div>
+					<!-- END ai-chat-info -->
+					
+					<hr class="m-0 opacity-20" />
+					
+					<!-- BEGIN ai-chat-user-info -->
+					<div class="px-3 py-3 border-0">
+						<div class="fw-500 flex-1 text-body d-flex align-items-center text-uppercase">
+							<div class="w-20px h-20px fs-5 me-2 text-body bg-white bg-opacity-15 d-flex align-items-center justify-content-center">
+								S
+							</div>
+							support@seantheme.com
+						</div>
+					</div>
+					<!-- END ai-chat-user-info -->
+				</div>
+				<!-- END ai-chat-sidebar-content -->
+			</div>
+			<!-- END ai-chat-sidebar -->
+			
+			<!-- BEGIN ai-chat-content -->
+			<div class="flex-1 d-flex flex-column h-100 mw-100">
+				<!-- BEGIN ai-chat-tabs -->
+				<div class="flex-1 overflow-hidden w-100 h-100">
+					<div class="p-2 p-lg-4 tab-content" data-scrollbar="true" data-height="100%">
+						<!-- BEGIN ai-chat-intro -->
+						<div id="aiChatIntro" class="tab-pane fade px-3 px-lg-4 py-2 h-100 show active">
+							<div class="d-flex flex-column justify-content-center" style="min-height: 100%;">
+								<div class="fs-1 lh-sm mb-0">
+									<span class="text-body fw-semibold">Hello, there</span>
+								</div>
+								<div class="fs-4 lh-sm text-body text-opacity-75 mb-4">How can I assist you today?</div>
+								<div class="row g-4">
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Suggest hidden gems and must-see spots for my next trip.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:calendar-date-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Plan My Adventure</div>
+												<div class="text-body text-opacity-75">Suggest hidden gems and must-see spots for my next trip.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Create a concise and professional response for any situation.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:chat-square-arrow-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Draft a Quick Reply</div>
+												<div class="text-body text-opacity-75">Create a concise and professional response for any situation.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Break down complex ideas into simple, easy-to-understand explanations.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:layers-minimalistic-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Simplify This</div>
+												<div class="text-body text-opacity-75">Break down complex ideas into simple, easy-to-understand explanations.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Write and troubleshoot code with smart fixes for tricky errors.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:code-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Code & Debug</div>
+												<div class="text-body text-opacity-75">Write and troubleshoot code with smart fixes for tricky errors.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Generate fresh ideas for projects, names, or creative solutions.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:lightbulb-bolt-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Brainstorm Anything</div>
+												<div class="text-body text-opacity-75">Generate fresh ideas for projects, names, or creative solutions.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+									<div class="col-sm-6 col-xl-4">
+										<!-- BEGIN card -->
+										<a href="#" class="card cursor-pointer h-100 text-decoration-none text-body text-opacity-75" data-toggle-ai-tab="aiChatNew" data-toggle-ai-input="Craft emails, reports, or social posts in a polished, clear tone.">
+											<div class="card-body p-4">
+												<div class="mb-3 d-flex text-body text-opacity-75">
+													<iconify-icon icon="solar:pen-2-line-duotone" class="display-6"></iconify-icon>
+												</div>
+												<div class="fw-bold text-body mb-1 text-uppercase fs-6">Write It for Me</div>
+												<div class="text-body text-opacity-75">Craft emails, reports, or social posts in a polished, clear tone.</div>
+											</div>
+										</a>
+										<!-- END card -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END ai-chat-intro -->
+						
+						<!-- BEGIN ai-chat-prev -->
+						<div id="aiChatPrev" class="tab-pane fade px-sm-3 px-lg-4 py-2 h-100">
+							<!-- BEGIN chat-human -->
+							<div class="d-flex justify-content-end align-items-end mb-3 gap-2">
+								<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+									Can you generate some content for social media captions?
+								</div>
+								<div>
+									<div class="w-20px h-20px my-2px fs-5 text-black bg-white d-flex align-items-center justify-content-center">
+										S
+									</div>
+								</div>
+							</div>
+							<!-- END chat-human -->
+							
+							<!-- BEGIN chat-ai -->
+							<div class="mb-3">
+								<div class="d-flex justify-content-start align-items-end gap-2">
+									<div>
+										<div class="w-20px h-20px my-2px ms-2 fs-5 text-white bg-white bg-opacity-25 d-flex align-items-center justify-content-center">
+											<i class="fa fa-shekel-sign"></i>
+										</div>
+									</div>
+									<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+										<div>Absolutely! What’s the topic or product?</div>
+									</div>
+								</div>
+								<div class="d-flex">
+									<div class="w-20px h-20px mx-3"></div>
+									<div class="d-flex flex-wrap w-100 py-2 opacity-75">
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-copy"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-up"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-down"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="fa fa-fw fa-microphone"></i></a>
+										<a href="#" class="link-secondary text-decoration"><i class="fa fa-fw fa-arrow-rotate-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- END chat-ai -->
+	
+							<!-- BEGIN chat-human -->
+							<div class="d-flex justify-content-end align-items-end mb-3 gap-2">
+								<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+									Let’s say… a coffee shop promotion.
+								</div>
+								<div>
+									<div class="w-20px h-20px my-2px fs-5 text-black bg-white d-flex align-items-center justify-content-center">
+										S
+									</div>
+								</div>
+							</div>
+							<!-- END chat-human -->
+							
+							<!-- BEGIN chat-ai -->
+							<div class="mb-3">
+								<div class="d-flex justify-content-start align-items-end gap-2">
+									<div>
+										<div class="w-20px h-20px my-2px ms-2 fs-5 text-white bg-white bg-opacity-25 d-flex align-items-center justify-content-center">
+											<i class="fa fa-shekel-sign"></i>
+										</div>
+									</div>
+									<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+										<div>How about these:</div>
+										<ol class="my-2 ps-4">
+											<li>Start your day with the perfect brew – 20% off all lattes today!</li>
+											<li>Coffee first, everything else later. Grab your cup now!</li>
+											<li>A little caffeine, a lot of happiness. Visit us for your daily fix!</li>
+										</ol>
+										<div>Need more options?</div>
+									</div>
+								</div>
+								<div class="d-flex">
+									<div class="w-20px h-20px mx-3"></div>
+									<div class="d-flex flex-wrap w-100 py-2 opacity-75">
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-copy"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-up"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-down"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="fa fa-fw fa-microphone"></i></a>
+										<a href="#" class="link-secondary text-decoration"><i class="fa fa-fw fa-arrow-rotate-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- END chat-ai -->
+	
+							<!-- BEGIN chat-human -->
+							<div class="d-flex justify-content-end align-items-end mb-3 gap-2">
+								<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+									How can I fetch API data in Vue.js?
+								</div>
+								<div>
+									<div class="w-20px h-20px my-2px fs-5 text-black bg-white d-flex align-items-center justify-content-center">
+										S
+									</div>
+								</div>
+							</div>
+							<!-- END chat-human -->
+							
+							<!-- BEGIN chat-ai -->
+							<div class="mb-3">
+								<div class="d-flex justify-content-start align-items-end gap-2">
+									<div>
+										<div class="w-20px h-20px my-2px ms-2 fs-5 text-white bg-white bg-opacity-25 d-flex align-items-center justify-content-center">
+											<i class="fa fa-shekel-sign"></i>
+										</div>
+									</div>
+									<div class="px-3 py-2 bg-white bg-opacity-10 text-body mw-75">
+										Here’s a simple example:
+										<div class="card my-2">
+											<div class="card-header d-flex">
+												<span class="flex-1">vue</span>
+												<span><a href="#" class="text-body text-decoration-none"><i class="far fa-copy"></i> Copy</a></span>
+											</div>
+											<div class="hljs-container bg-body bg-opacity-50 border-0">
+										<pre><code class="xml">&lt;script&gt;
+	export default {
+	async mounted() {
+	const response = await fetch('https://api.example.com/data');
+	const data = await response.json();
+	console.log(data);
+	}
+	}
+	&lt;/script&gt;
+	</code></pre>
+											</div>
+			
+										</div>
+										Would you like me to explain how this works?
+									</div>
+								</div>
+								<div class="d-flex">
+									<div class="w-20px h-20px mx-3"></div>
+									<div class="d-flex flex-wrap w-100 py-2 opacity-75">
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-copy"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-up"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="far fa-fw fa-thumbs-down"></i></a>
+										<a href="#" class="link-secondary text-decoration me-2"><i class="fa fa-fw fa-microphone"></i></a>
+										<a href="#" class="link-secondary text-decoration"><i class="fa fa-fw fa-arrow-rotate-right"></i></a>
+									</div>
+								</div>
+							</div>
+							<!-- END chat-ai -->
+						</div>
+						<!-- END ai-chat-prev -->
+						
+						<!-- BEGIN ai-chat-new -->
+						<div id="aiChatNew" class="tab-pane fade px-sm-3 px-lg-4 py-2 h-100">
+						</div>
+						<!-- END ai-chat-new -->
+					</div>
+				</div>
+				<!-- END ai-chat-tabs -->
+				
+				<!-- BEGIN ai-chat-input -->
+				<div>
+					<div class="px-lg-4 px-3 pb-3">
+						<div class="position-relative mx-lg-4 mx-2 h-100">
+							<div class="position-absolute start-0 bottom-0 p-2">
+								<button type="button" class="btn btn-lg px-1 py-1 text-body text-opacity-50"><i class="fa fa-fw fa-plus"></i></button>
+								<button type="button" class="btn btn-lg px-1 py-1 text-body text-opacity-50"><i class="fa fa-fw fa-globe"></i></button>
+								<button type="button" class="btn btn-lg px-1 py-1 text-body text-opacity-50"><i class="fa fa-fw fa-microphone"></i></button>
+							</div>
+							<input type="text" class="form-control form-control-lg shadow-none rounded-0" style="padding-bottom: 100px; padding-top: 10px;" id="userInput" placeholder="Message AI Bot" />
+							<div class="position-absolute end-0 bottom-0 px-2 pb-2">
+								<button id="sendButton" class="btn btn-lg bg-inverse text-body bg-opacity-20 rounded-0">
+									<i class="fa fa-arrow-right"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END ai-chat-input -->
+			</div>
+			<!-- END ai-chat-content -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/js/demo/ai-chat.demo.js"></script>
+'}}

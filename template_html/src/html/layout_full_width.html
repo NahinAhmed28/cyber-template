@@ -1,0 +1,46 @@
+{{> head pageTitle='Full Width' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-content-full-width">
+		{{> app-header }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">LAYOUT</a></li>
+				<li class="breadcrumb-item active">FULL WIDTH</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Full Width <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden">
+				<div data-scrollbar="true" data-height="100%" class="app-content-inner-padding">
+					<p>
+						Set up the page like the example below to create the full width page.
+					</p>
+					<div class="card mb-3">
+						<div class="hljs-container border-0">
+							<pre><code class="xml" data-url="assets/data/layout-full-width/code-1.json"></code></pre>
+						</div>
+					</div>
+			
+					<p>
+						<a href="javascript:history.back(-1);" class="btn btn-outline-theme"><i class="bi bi-chevron-left fa-fw ms-n1"></i> BACK</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+'}}

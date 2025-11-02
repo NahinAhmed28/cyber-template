@@ -1,0 +1,8 @@
+&lt;div id="appContent" class="app-content p-0 d-flex flex-column"&gt;
+  &lt;div class="app-content-inner-padding flex-1 overflow-scroll"&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div id="appFooter" class="app-footer"&gt;
+    &copy; 2025 seanTheme All Right Reserved
+  &lt;/div&gt;
+&lt;/div&gt;

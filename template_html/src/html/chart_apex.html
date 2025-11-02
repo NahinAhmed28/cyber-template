@@ -1,0 +1,253 @@
+{{> head pageTitle='Apexcharts.js' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar chartsClass=' active' ApexchartsClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">CHARTS</a></li>
+				<li class="breadcrumb-item active">APEXCHARTS.JS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Apexcharts.js <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding flex-1">
+					<div class="row justify-content-center py-3">
+						<div class="col-xl-8">
+								
+							<!-- BEGIN #apexChart -->
+							<div id="apexChart">
+								<h4>Basic Example</h4>
+								<p>Apexcharts.js is a modern javaScript charting library to build interactive charts and visualizations with simple API. Please read the <a href="https://apexcharts.com/" target="_blank">official documentation</a> for the full list of options.</p>
+							</div>
+							<!-- END #apexChart -->
+							
+							<!-- BEGIN #apexChartLineChart -->
+							<div id="apexChartLineChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>LINE CHART</h6>
+										<div id="apexLineChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-1.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsLineChart -->
+							
+							<!-- BEGIN #apexChartColumnChart -->
+							<div id="apexChartColumnChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>COLUMN CHART</h6>
+										<div id="apexColumnChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-2.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartColumnChart -->
+							
+							<!-- BEGIN #apexChartAreaChart -->
+							<div id="apexChartAreaChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>AREA CHART</h6>
+										<div id="apexAreaChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-3.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartAreaChart -->
+							
+							<!-- BEGIN #apexChartBarChart -->
+							<div id="apexChartBarChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>BAR CHART</h6>
+										<div id="apexBarChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-4.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartBarChart -->
+							
+							<!-- BEGIN #apexChartMixedChart -->
+							<div id="apexChartMixedChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>MIXED CHART</h6>
+										<div id="apexMixedChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-5.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartMixedChart -->
+							
+							<!-- BEGIN #apexChartCandlestickChart -->
+							<div id="apexChartCandlestickChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>CANDLESTICK CHART</h6>
+										<div id="apexCandlestickChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-6.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartCandlestickChart -->
+							
+							<!-- BEGIN #apexChartBubbleChart -->
+							<div id="apexChartBubbleChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>BUBBLE CHART</h6>
+										<div id="apexBubbleChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-7.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartBubbleChart -->
+							
+							<!-- BEGIN #apexChartScatterChart -->
+							<div id="apexChartScatterChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>SCATTER CHART</h6>
+										<div id="apexScatterChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-8.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartScatterChart -->
+							
+							<!-- BEGIN #apexChartHeatmapChart -->
+							<div id="apexChartHeatmapChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>HEATMAP CHART</h6>
+										<div id="apexHeatmapChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-9.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartHeatmapChart -->
+							
+							<!-- BEGIN #apexChartPieChart -->
+							<div id="apexChartPieChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>PIE CHART</h6>
+										<div id="apexPieChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-10.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartPieChart -->
+							
+							<!-- BEGIN #apexChartRadialBarChart -->
+							<div id="apexChartRadialBarChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>RADIAL BAR CHART</h6>
+										<div id="apexRadialBarChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-11.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartRadialBarChart -->
+							
+							<!-- BEGIN #apexChartRadarChart -->
+							<div id="apexChartRadarChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>RADAR CHART</h6>
+										<div id="apexRadarChart"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-apex/code-12.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #apexChartRadarChart -->
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+				
+				<div class="w-250px d-none d-md-block border-start">
+					<nav id="sidebarBootstrap" class="navbar navbar-sticky d-none d-md-block">
+						<nav class="nav text-uppercase">
+							<div class="nav-header">On This Page</div>
+							<a class="nav-link" href="#apexChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">Apexcharts.js</a>
+							<a class="nav-link" href="#apexChartLineChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">line chart</a>
+							<a class="nav-link" href="#apexChartColumnChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">column chart</a>
+							<a class="nav-link" href="#apexChartAreaChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">area chart</a>
+							<a class="nav-link" href="#apexChartBarChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">bar chart</a>
+							<a class="nav-link" href="#apexChartMixedChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">mixed chart</a>
+							<a class="nav-link" href="#apexChartCandlestickChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">candlestick chart</a>
+							<a class="nav-link" href="#apexChartBubbleChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">bubble chart</a>
+							<a class="nav-link" href="#apexChartScatterChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">scatter chart</a>
+							<a class="nav-link" href="#apexChartHeatmapChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">heatmap chart</a>
+							<a class="nav-link" href="#apexChartPieChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">pie chart</a>
+							<a class="nav-link" href="#apexChartRadialBarChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">radial bar chart</a>
+							<a class="nav-link" href="#apexChartRadarChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">radar chart</a>
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="assets/js/demo/chart-apex.demo.js"></script>
+	<script src="assets/js/demo/sidebar-scrollspy.demo.js"></script>
+'}}

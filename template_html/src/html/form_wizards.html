@@ -1,0 +1,207 @@
+{{> head pageTitle='Form Wizards' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar formsClass=' active' wizardsClass=' active' }}
+		
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">FORMS</a></li>
+				<li class="breadcrumb-item active">FORM WIZARDS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Form Wizards <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding flex-1">
+					<div class="row justify-content-center py-3">
+						<div class="col-xl-8">
+							<!-- BEGIN #wizardLayout1 -->
+							<div id="wizardLayout1" class="mb-5">
+								<h4>Wizard layout 1</h4>
+								<p>Wizard layout include the number of step and text. Please do note that all the wizard is for uxui ONLY but do not include any javascript or backend logic.</p>
+								<div class="card">
+									<div class="card-body">
+										<div class="nav-wizards-container">
+											<nav class="nav nav-wizards-1 mb-2">
+												<div class="nav-item col">
+													<a class="nav-link completed" href="#">
+														<div class="nav-no">1</div>
+														<div class="nav-text">COMPLETED STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link completed" href="#">
+														<div class="nav-no">2</div>
+														<div class="nav-text">SECOND STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link active" href="#">
+														<div class="nav-no">3</div>
+														<div class="nav-text">ACTIVE STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link disabled" href="#">
+														<div class="nav-no">4</div>
+														<div class="nav-text">DISABLED STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link disabled" href="#">
+														<div class="nav-no">5</div>
+														<div class="nav-text">LAST STEP</div>
+													</a>
+												</div>
+											</nav>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												wizard content here
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/form-wizards/code-1.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #wizardLayout1 -->
+							
+							<!-- BEGIN #wizardLayout2 -->
+							<div id="wizardLayout2" class="mb-5">
+								<h4>Wizard layout 2</h4>
+								<p>Wizard layout include the number of step and text. Please do note that all the wizard is for uxui ONLY but do not include any javascript or backend logic.</p>
+								<div class="card">
+									<div class="card-body">
+										<div class="nav-wizards-container">
+											<nav class="nav nav-wizards-2 mb-3">
+												<div class="nav-item col">
+													<a class="nav-link completed" href="#">
+														<div class="nav-text">1. COMPLETED STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link active" href="#">
+														<div class="nav-text">2. ACTIVE STEP TEXT</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link disabled" href="#">
+														<div class="nav-text">3. DISABLED STEP TEXT</div>
+													</a>
+												</div>
+											</nav>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												wizard content here
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/form-wizards/code-2.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #wizardLayout2 -->
+							
+							<!-- BEGIN #wizardLayout3 -->
+							<div id="wizardLayout3" class="mb-5">
+								<h4>Wizard layout 3</h4>
+								<p>Wizard layout include the number of step and text. Please do note that all the wizard is for uxui ONLY but do not include any javascript or backend logic.</p>
+								<div class="card">
+									<div class="card-body">
+										<div class="nav-wizards-container">
+											<nav class="nav nav-wizards-3 mb-2">
+												<div class="nav-item col">
+													<a class="nav-link completed" href="#">
+														<div class="nav-dot"></div>
+														<div class="nav-title">STEP 1</div>
+														<div class="nav-text">COMPLETED STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link completed" href="#">
+														<div class="nav-dot"></div>
+														<div class="nav-title">STEP 2</div>
+														<div class="nav-text">SECOND STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link active" href="#">
+														<div class="nav-dot"></div>
+														<div class="nav-title">STEP 3</div>
+														<div class="nav-text">ACTIVE STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link disabled" href="#">
+														<div class="nav-dot"></div>
+														<div class="nav-title">STEP 4</div>
+														<div class="nav-text">DISABLED STEP</div>
+													</a>
+												</div>
+												<div class="nav-item col">
+													<a class="nav-link disabled" href="#">
+														<div class="nav-dot"></div>
+														<div class="nav-title">STEP 5</div>
+														<div class="nav-text">LAST STEP</div>
+													</a>
+												</div>
+											</nav>
+										</div>
+										<div class="card">
+											<div class="card-body">
+												wizard content here
+											</div>
+											
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/form-wizards/code-3.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #wizardLayout3 -->
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+				
+				<div class="w-250px d-none d-md-block border-start">
+					<nav id="sidebarBootstrap" class="navbar navbar-sticky d-none d-md-block">
+						<nav class="nav text-uppercase">
+							<div class="nav-header">On This Page</div>
+							<a class="nav-link" href="#wizardLayout1" data-toggle="scroll-to" data-scroll-container="#scrollbar">Wizard layout 1</a>
+							<a class="nav-link" href="#wizardLayout2" data-toggle="scroll-to" data-scroll-container="#scrollbar">Wizard layout 2</a>
+							<a class="nav-link" href="#wizardLayout3" data-toggle="scroll-to" data-scroll-container="#scrollbar">Wizard layout 3</a>
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/js/demo/sidebar-scrollspy.demo.js"></script>
+'}}

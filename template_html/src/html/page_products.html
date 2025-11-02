@@ -1,0 +1,412 @@
+{{> head pageTitle='Products' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar pagesClass=' active' productsClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">PAGES</a></li>
+				<li class="breadcrumb-item active">PRODUCTS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Products <small>page header description goes here...</small>
+				</div>
+				<div class="ms-auto d-none d-lg-block">
+					<a href="#" class="btn btn-outline-secondary">ADD PRODUCT</a>
+				</div>
+			</div>
+			<div class="p-3 border-bottom" data-scrollbar="true">
+				<!-- BEGIN input-group -->
+				<div class="input-group mb-3">
+					<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STATUS: ALL &nbsp;</button>
+					<div class="dropdown-menu position-fixed">
+						<a class="dropdown-item" href="#">ALL</a>
+						<a class="dropdown-item" href="#">PUBLISHED</a>
+						<a class="dropdown-item" href="#">EXPIRED</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">DELETED</a>
+					</div>
+					<div class="flex-fill position-relative">
+						<div class="input-group">
+							<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0 pe-0">
+								<i class="fa fa-search opacity-5"></i>
+							</div>
+							<input type="text" class="form-control ps-30px border-start-0" placeholder="Search products">
+						</div>
+					</div>
+				</div>
+				<!-- END input-group -->
+				<div class="d-flex gap-4 text-uppercase text-nowrap mb-n2">
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-download fa-fw text-body text-opacity-25"></i> EXPORT</a></div>
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-upload fa-fw text-body text-opacity-25"></i> IMPORT</a></div>
+					<div>
+						<a href="#" data-bs-toggle="dropdown" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none">More Actions <b class="caret opacity-25"></b></a>
+						<div class="dropdown-menu position-fixed mt-8px">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div role="separator" class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="flex-1">
+					<!-- BEGIN table -->
+					<div class="table-responsive">
+						<table class="table table-striped table-sm table-card text-nowrap text-uppercase mb-1">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Product</th>
+									<th>Inventory</th>
+									<th>Type</th>
+									<th>Vendor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product1">
+											<label class="form-check-label" for="product1"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-1.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">Nebula Vision Pro Laptop</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">83 in stock for 3 variants</td>
+									<td class="align-middle">AMOLED Display</td>
+									<td class="align-middle">Nebula Tech</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product2">
+											<label class="form-check-label" for="product2"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-2.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">Corelite Ultra Tablet</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">79 in stock for 3 variants</td>
+									<td class="align-middle">Graphene Frame</td>
+									<td class="align-middle">Corelite Series</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product3">
+											<label class="form-check-label" for="product3"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-3.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">HUDSync Alpha Phone</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">19 in stock for 1 variants</td>
+									<td class="align-middle">Neuro-Responsive Touch</td>
+									<td class="align-middle">HUDSync</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product4">
+											<label class="form-check-label" for="product4"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-4.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">Quantum Air Wireless Earbuds</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">19 in stock for 1 variants</td>
+									<td class="align-middle">AI Noise Cancellation</td>
+									<td class="align-middle">Quantum Sound</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product5">
+											<label class="form-check-label" for="product5"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-5.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">GlassNode Smartwatch V3</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">19 in stock for 1 variants</td>
+									<td class="align-middle">Titanium Body</td>
+									<td class="align-middle">GlassNode Wearables</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product6">
+											<label class="form-check-label" for="product6"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-6.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">OmniPad Flex 14” Tablet</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">30 in stock for 4 variants</td>
+									<td class="align-middle">Eco-Lithium Battery</td>
+									<td class="align-middle">OmniPad</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product7">
+											<label class="form-check-label" for="product7"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-7.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">VantaRay HUD Display Monitor</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">49 in stock for 8 variants</td>
+									<td class="align-middle">4K Crystal HUD</td>
+									<td class="align-middle">VantaRay Series</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product8">
+											<label class="form-check-label" for="product8"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-8.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">NeuroLink Portable Projector</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">19 in stock for 1 variants</td>
+									<td class="align-middle">AR Projection System</td>
+									<td class="align-middle">NeuroLink Vision</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product9">
+											<label class="form-check-label" for="product9"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-9.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">ArcOne Gaming Console (HUD Edition)</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">94 in stock for 1 variants</td>
+									<td class="align-middle">Haptic Feedback Controls</td>
+									<td class="align-middle">ArcOne</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product10">
+											<label class="form-check-label" for="product10"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-10.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">EchoBox Mini Smart Speaker</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">23 in stock for 5 variants</td>
+									<td class="align-middle">Voice Neural AI</td>
+									<td class="align-middle">EchoBox</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product11">
+											<label class="form-check-label" for="product11"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-11.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">AetherLens AR Glasses</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">45 in stock for 2 variants</td>
+									<td class="align-middle">Holographic Overlay</td>
+									<td class="align-middle">Aether Digital</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product12">
+											<label class="form-check-label" for="product12"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-12.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">Stratos Nova Phone</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">51 in stock for 3 variants</td>
+									<td class="align-middle">LiquidGlass Display</td>
+									<td class="align-middle">Stratos Lab</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product13">
+											<label class="form-check-label" for="product13"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-13.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">LucentEdge Hybrid Laptop</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">39 in stock for 2 variants</td>
+									<td class="align-middle">CarbonShell Design</td>
+									<td class="align-middle">Lucent Systems</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product14">
+											<label class="form-check-label" for="product14"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-14.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">VoxBeam Wireless Hub</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">112 in stock for 1 variant</td>
+									<td class="align-middle">Multi-Device Sync</td>
+									<td class="align-middle">VoxTech</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product15">
+											<label class="form-check-label" for="product15"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-15.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">NeuroGrid 10” HUD Tablet</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">76 in stock for 2 variants</td>
+									<td class="align-middle">AI-Optimized UI</td>
+									<td class="align-middle">NeuroGrid</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check m-0">
+											<input type="checkbox" class="form-check-input" id="product16">
+											<label class="form-check-label" for="product16"></label>
+										</div>
+									</td>
+									<td>
+										<div class="d-flex align-items-center">
+											<img alt="" width="30" height="30" class="object-fit-cover" src="assets/img/product/product-16.jpg" />
+											<div class="ms-3">
+												<a href="page_product_details.html" class="text-body text-opacity-75 text-decoration-none">IonKey Slim Keyboard</a>
+											</div>
+										</div>
+									</td>
+									<td class="align-middle">84 in stock for 3 variants</td>
+									<td class="align-middle">Magnetic Touch Response</td>
+									<td class="align-middle">IonTech</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- END table -->
+				</div>
+				<!-- END scrollbar -->
+			</div>
+			<div class="p-3 border-top" data-scrollbar="true">
+				<div class="d-lg-flex align-items-center gap-3">
+					<div class="text-body text-opacity-50 flex-1 text-lg-start text-center mb-2 mb-lg-0">
+						Showing <span class="text-body">1 to 10</span> of <span class="text-body">57</span> entries
+					</div>
+					<ul class="pagination pagination-sm mb-0 justify-content-center">
+						<li class="page-item disabled"><a class="page-link">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item active"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#">6</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='' }}

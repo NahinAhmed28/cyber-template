@@ -1,0 +1,751 @@
+{{> head pageTitle='AI Image Generator' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-content-full-height">
+		{{> app-header }}
+		
+		{{> app-sidebar aiStudioClass=' active' aiImageGeneratorClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0">
+			<div class="app-content-inner-padding" data-height="100%" data-scrollbar="true">
+				<!-- BEGIN ai-generator -->
+				<div class="position-relative mx-n3 mt-n3 mb-3 border-bottom">
+					<img class="object-fit-cover position-absolute top-0 end-0 h-100 w-100 opacity-50" src="assets/img/gallery/widget-cover-1.jpg" alt="" />
+					
+					<div class="py-5 px-lg-0 px-3 bg-body bg-opacity-50 position-relative">
+						<!-- BEGIN ai-title -->
+						<div class="text-center fs-2 fw-semibold mt-3 pt-3 text-body text-uppercase">
+							Describe your ideas and generate
+						</div>
+						<!-- END ai-title -->
+						
+						<!-- BEGIN ai-desc -->
+						<div class="text-center fs-6 text-body text-opacity-50 mb-4">Transform your words into visual masterpieces: Leverage AI technology to craft breathtaking images.</div>
+						<!-- END ai-desc -->
+						
+						<!-- BEGIN ai-form -->
+						<div class="position-relative mx-auto h-100 w-100 mb-2" style="max-width: 520px;">
+							<form action="" method="POST" data-form-submit="generate-image">
+								<input type="text" class="form-control form-control-lg fs-5 border-secondary shadow-none h-50px" id="userInput" placeholder="Write a prompt to generate" />
+								<div class="position-absolute end-0 top-0 bottom-0 d-flex p-10px">
+									<button id="sendButton" class="d-flex align-items-center btn btn-secondary h-auto">
+										GENERATE <i class="fa fa-arrow-right ms-2 mt-1px"></i>
+									</button>
+								</div>
+							</form>
+						</div>
+						<!-- END ai-form -->
+						
+						<!-- BEGIN ai-option -->
+						<div class="position-relative h-100 w-100 mb-5 pb-3 mx-auto d-flex" style="max-width: 520px;">
+							<div class="dropdown me-2">
+								<label class="btn btn-sm btn-outline-secondary d-flex align-items-center px-9px">
+									<input type="file" class="d-none" accept="image/*" onchange="previewImage(event)" />
+									<i id="previewIcon" class="fa fa-fw fa-plus me-4px"></i> UPLOAD IMAGE
+									<img id="previewImage" src="" alt="" class="w-20px h-20px me-n1 ms-2 d-none my-n1" />
+								</label>
+							</div>
+							<div class="dropdown me-2 ms-auto">
+								<button type="button" data-bs-toggle="dropdown" class="btn btn-sm btn-outline-secondary d-flex align-items-center"><i class="fa fa-fw fa-globe me-1"></i> <span id="aiRatioText">RATIO</span> <i class="fa fa-chevron-down fa-fw opacity-50 ms-1"></i></button>
+								<div class="dropdown-menu dropdown-menu-end text-uppercase">
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="Ratio">None</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="1:1 (Square)">1:1 (Square)</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="16:9 (Widescreen)">16:9 (Widescreen)</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="4:3 (Standard)">4:3 (Standard)</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="3:2 (Classic)">3:2 (Classic)</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="21:9 (Ultra Wide)">21:9 (Ultra Wide)</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiRatioText" data-value="9:16 (Portrait)">9:16 (Portrait)</a>
+								</div>
+							</div>
+							<div class="dropdown">
+								<button type="button" data-bs-toggle="dropdown" class="btn btn-sm btn-outline-secondary d-flex align-items-center"><i class="fa fa-fw fa-palette me-1"></i> <span id="aiStyleText">STYLE</span> <i class="fa fa-chevron-down fa-fw opacity-50 ms-1"></i></button>
+								<div class="dropdown-menu dropdown-menu-end text-uppercase">
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Style">None</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Realistic">Realistic</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Anime">Anime</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Cyberpunk">Cyberpunk</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Pixel Art">Pixel Art</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Cartoon">Cartoon</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Sketch">Sketch</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Fantasy">Fantasy</a>
+									<a class="dropdown-item" href="#" data-select="ai-dropdown-selection" data-target="#aiStyleText" data-value="Neon">Neon</a>
+								</div>
+							</div>
+						</div>
+						<!-- END ai-option -->
+					</div>
+				</div>
+				<!-- END ai-generator -->
+				
+				<!-- BEGIN ai-gen-tools -->
+				<div class="fs-6 fw-semibold mb-2">IMAGE GENERATION TOOLS</div>
+				<div class="row g-3 mb-3">
+					<div class="col-6 col-md-3">
+						<!-- BEGIN card -->
+						<div class="card p-2">
+							<div data-bs-theme="dark">
+								<img class="card-img object-fit-cover" height="150" src="assets/img/ai/tools-1.jpg" alt="" />
+								<div class="card-img-overlay m-2 p-3 d-flex align-items-end bg-gradient-135 bg-gradient-from-black bg-gradient-to-transparent">
+									<div>
+										<iconify-icon icon="solar:volleyball-2-line-duotone" class="fs-1 text-body mb-1"></iconify-icon>
+										<div class="fw-semibold fs-6 text-uppercase">Text to Image</div>
+										<div class="fw-semibold text-body text-opacity-75">Turn your words into stunning visuals with AI-generated artwork.</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- END card -->
+					</div>
+					<div class="col-6 col-md-3">
+						<!-- BEGIN card -->
+						<div class="card p-2">
+							<div data-bs-theme="dark">
+								<img class="card-img object-fit-cover rounded-0" height="150" src="assets/img/ai/tools-2.jpg" alt="" />
+								<div class="card-img-overlay m-2 p-3 d-flex align-items-end bg-gradient-135 bg-gradient-from-black bg-gradient-to-transparent">
+									<div>
+										<iconify-icon icon="solar:layers-minimalistic-line-duotone" class="fs-1 text-body mb-1"></iconify-icon>
+										<div class="fw-semibold fs-6 text-uppercase">Text to PNG</div>
+										<div class="fw-semibold text-body text-opacity-75">Create high-quality PNG images from text with transparency support.</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- END card -->
+					</div>
+					<div class="col-6 col-md-3">
+						<!-- BEGIN card -->
+						<div class="card p-2">
+							<div data-bs-theme="dark">
+								<img class="card-img object-fit-cover rounded-0" height="150" src="assets/img/ai/tools-3.jpg" alt="" />
+								<div class="card-img-overlay m-2 p-3 d-flex align-items-end bg-gradient-135 bg-gradient-from-black bg-gradient-to-transparent">
+									<div>
+										<iconify-icon icon="solar:gallery-edit-line-duotone" class="fs-1 text-body mb-1"></iconify-icon>
+										<div class="fw-semibold fs-6 text-uppercase">Image Editor</div>
+										<div class="fw-semibold text-body text-opacity-75">Enhance, modify, and perfect your images with powerful editing tools.</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- END card -->
+					</div>
+					<div class="col-6 col-md-3">
+						<!-- BEGIN card -->
+						<div class="card p-2">
+							<div data-bs-theme="dark">
+								<img class="card-img object-fit-cover rounded-0" height="150" src="assets/img/ai/tools-4.jpg" alt="" />
+								<div class="card-img-overlay m-2 p-3 d-flex align-items-end bg-gradient-135 bg-gradient-from-black bg-gradient-to-transparent">
+									<div>
+										<iconify-icon icon="solar:refresh-line-duotone" class="fs-1 text-body mb-1"></iconify-icon>
+										<div class="fw-semibold fs-6 text-uppercase">Reimagine</div>
+										<div class="fw-semibold text-body text-opacity-75">Transform and regenerate images with fresh, AI-powered creativity.</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						<!-- END card -->
+					</div>
+				</div>
+				<!-- END ai-gen-tools -->
+				
+				<!-- BEGIN ai-generated-result -->
+				<div id="aiGeneratedContainer" class="mb-3 pt-2 d-none">
+					<div id="aiGeneratingResult" class="fade d-none">
+						<div class="fs-6 fw-semibold mb-2">GENERATING</div>
+						<div class="mb-3 d-flex align-items-center gap-1">
+							<iconify-icon icon="solar:info-circle-line-duotone" class="fs-5"></iconify-icon>
+							<div class="text-body text-opacity-75">
+								This is a simulated AI-generated response. Please note that the image was not created by an actual AI model.
+							</div>
+						</div>
+						<!-- BEGIN row -->
+						<div class="row g-3">
+							<!-- BEGIN col-6 -->
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card p-2">
+									<div class="ratio" style="--bs-aspect-ratio: 68.46%;">
+										<div><div class="shimmer-loader h-100"></div></div>
+									</div>
+									
+								</div>
+								<!-- END card -->
+							</div>
+							<!-- END col-6 -->
+							<!-- BEGIN col-6 -->
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card p-2">
+									<div class="ratio" style="--bs-aspect-ratio: 68.46%;">
+										<div><div class="shimmer-loader h-100"></div></div>
+									</div>
+									
+								</div>
+								<!-- END card -->
+							</div>
+							<!-- END col-6 -->
+							<!-- BEGIN col-6 -->
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card p-2">
+									<div class="ratio" style="--bs-aspect-ratio: 68.46%;">
+										<div><div class="shimmer-loader h-100"></div></div>
+									</div>
+									
+								</div>
+								<!-- END card -->
+							</div>
+							<!-- END col-6 -->
+							<!-- BEGIN col-6 -->
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card p-2">
+									<div class="ratio" style="--bs-aspect-ratio: 68.46%;">
+										<div><div class="shimmer-loader h-100"></div></div>
+									</div>
+									
+								</div>
+								<!-- END card -->
+							</div>
+							<!-- END col-6 -->
+						</div>
+						<!-- END row -->
+					</div>
+					<div id="aiGeneratedResult" class="d-none">
+						<div class="fs-6 fw-semibold mb-2">AI-GENERATED RESULT</div>
+						<div class="mb-3 d-flex align-items-center gap-1">
+							<iconify-icon icon="solar:info-circle-line-duotone" class="fs-5"></iconify-icon>
+							<div class="text-body text-opacity-75">
+								This is a simulated AI-generated response. Please note that the image was not created by an actual AI model.
+							</div>
+						</div>
+						<div class="row g-3">
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card hover-show p-md-2 p-1">
+									<img src="assets/img/ai/generated-1.jpg" class="card-img rounded-0" alt="Generated Image" />
+									<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+										<div class="h-100 d-flex align-items-end">
+											<div class="w-100">
+												<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Variant 1</div>
+												<div class="d-flex fw-semibold gap-2 mt-1">
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END card -->
+							</div>
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card hover-show p-md-2 p-1">
+									<img src="assets/img/ai/generated-2.jpg" class="card-img rounded-0" alt="Generated Image" />
+									<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+										<div class="h-100 d-flex align-items-end">
+											<div class="w-100">
+												<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Variant 2</div>
+												<div class="d-flex fw-semibold gap-2 mt-1">
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END card -->
+							</div>
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card hover-show p-md-2 p-1">
+									<img src="assets/img/ai/generated-3.jpg" class="card-img rounded-0" alt="Generated Image" />
+									<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+										<div class="h-100 d-flex align-items-end">
+											<div class="w-100">
+												<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Variant 3</div>
+												<div class="d-flex fw-semibold gap-2 mt-1">
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END card -->
+							</div>
+							<div class="col-6 col-md-3">
+								<!-- BEGIN card -->
+								<div class="card hover-show p-md-2 p-1">
+									<img src="assets/img/ai/generated-4.jpg" class="card-img rounded-0" alt="Generated Image" />
+									<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+										<div class="h-100 d-flex align-items-end">
+											<div class="w-100">
+												<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Variant 4</div>
+												<div class="d-flex fw-semibold gap-2 mt-1">
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+													<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END card -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END ai-generated-result -->
+				
+				<!-- BEGIN ai-imagine -->
+				<div class="mb-3 pt-2">
+					<h6 class="fs-6 fw-semibold mb-2 pb-1">EXPLORE IMAGINE</h6>
+					<ul class="nav nav-pills mb-3 d-flex gap-2 text-uppercase fw-semibold">
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75 bg-light" aria-current="page" href="#">All</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Fantasy</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Art</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Nature</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Popculture</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Futuristic</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Architecture</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Animals</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">People</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Food</a></li>
+						<li class="nav-item"><a class="nav-link px-3 py-1 hover-bg-light bg-opacity-50 text-body text-opacity-75" href="#">Horror</a></li>
+					</ul>
+					<div class="row g-3" data-masonry='{"percentPosition": true }'>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-1.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Psychedelic girl illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-2.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Fantasy water character</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-3.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Anime character using virtual reality glasses in the metaverse</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-4.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Fantasy water character</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-5.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Space adventure artwork</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-6.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Futuristic half-robot tiger in nature</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-7.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Psychedelic girl illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-8.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">View of airplane flying through a fantasy world</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-9.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Fantasy style clouds with animal</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-10.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Psychedelic girl illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-11.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Fantasy bird illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-12.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Vibrant colored autumn trees on fiery backdrop generated by AI</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-13.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">View of rhinoceros animal with futuristic robotic parts</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-14.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Robot and human silhouettes</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-15.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Neon hologram of tiger</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-16.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Fantasy house on the moon illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-17.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">People hanging out with robot</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-18.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Off-road car in fantasy scenario</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-19.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Cyberpunk city street at night with neon lights and futuristic aesthetic</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-20.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Cartoon ai robot scene</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-21.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Blockchain technology cartoon illustration</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-22.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Cartoon ai robot scene</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+						<div class="col-6 col-md-3">
+							<!-- BEGIN card -->
+							<div class="card hover-show p-md-2 p-1">
+								<img src="assets/img/ai/imagine-23.jpg" class="card-img rounded-0" alt="Generated Image" />
+								<div class="card-img-overlay m-2 p-3 d-none hover-show-elm top-0 end-0 bg-gradient-to-t bg-gradient-from-black bg-gradient-to-transparent">
+									<div class="h-100 d-flex align-items-end">
+										<div class="w-100">
+											<div class="fs-6 text-uppercase mb-0 lh-base text-truncate text-body fw-semibold">Cartoon ai robot scene</div>
+											<div class="d-flex fw-semibold gap-2 mt-1">
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-pen opacity-50"></i> Edit</a>
+												<a href="#" class="text-decoration-none text-body text-opacity-75"><i class="fa fa-fw fa-repeat opacity-50"></i> Variation</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card -->
+						</div>
+					</div>
+				</div>
+				<!-- END ai-imagine -->
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="assets/plugins/masonry-layout/dist/masonry.pkgd.min.js"></script>
+	<script src="assets/js/demo/ai-image-generator.demo.js"></script>
+'}}

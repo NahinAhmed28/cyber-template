@@ -1,0 +1,37 @@
+{{> head pageTitle='Home' pageCss=''}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-with-header">
+		{{> app-header }}
+		
+		{{> app-sidebar homeClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">BREADCRUMB</a></li>
+				<li class="breadcrumb-item active">HOME PAGE</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Starter Page <small>page header description goes here...</small>
+				</div>
+			</div>
+			
+			<!-- BEGIN scrollbar -->
+			<div class="flex-1 app-content-inner-padding" data-scrollbar="true" data-height="100%">
+				<p>
+					Start build your page here
+				</p>
+			</div>
+			<!-- END scrollbar -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+
+{{> script pageJs=''}}

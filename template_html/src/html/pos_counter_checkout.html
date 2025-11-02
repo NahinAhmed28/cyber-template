@@ -1,0 +1,951 @@
+{{> head pageTitle='POS - Counter Checkout System' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-content-full-height app-without-sidebar app-without-header">
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0">
+			<div class="pos pos-with-header pos-with-sidebar" id="pos">
+				<!-- BEGIN pos-container -->
+				<div class="pos-container">
+					<!-- BEGIN pos-header -->
+					<div class="pos-header">
+						<div class="logo">
+							<a href="index.html">
+								<div class="logo-img"><iconify-icon icon="solar:widget-line-duotone"></iconify-icon></div>
+								<div class="logo-text">POS SYSTEM</div>
+							</a>
+						</div>
+						<div class="time" id="time">00:00</div>
+						<div class="nav">
+							<div class="nav-item">
+								<a href="pos_counter_checkout.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Counter Checkout">
+									<iconify-icon icon="solar:cart-3-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Counter</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_kitchen_order.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Kitchen Order">
+									<iconify-icon icon="solar:documents-minimalistic-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Kitchen</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_table_booking.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Table Booking">
+									<iconify-icon icon="solar:calendar-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Table</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_menu_stock.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Menu Stock">
+									<iconify-icon icon="solar:box-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Stock</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- END pos-header -->
+			
+					<!-- BEGIN pos-counter-content -->
+					<div class="pos-content">
+						<div class="pos-content-container p-1px">
+							<div class="row g-0">
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">1</div>
+												<div class="small fw-semibold">9 order</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">4 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">35:20</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$318.20</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">Unpaid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">2</div>
+												<div class="small fw-semibold">12 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">6 / 8</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">12:69</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$682.20</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">Unpaid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">3</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">4</div>
+												<div class="small fw-semibold">max 4 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">5</div>
+												<div class="small fw-semibold">max 4 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">6</div>
+												<div class="small fw-semibold">3 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">3 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">20:52</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$56.49</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">Unpaid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">7</div>
+												<div class="small fw-semibold">6 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">3 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">58:40</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$329.02</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="material-symbols-light:check-circle-outline" class="fs-16px d-block text-success"></iconify-icon></div>
+														<div class="w-60px text-success">Paid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">8</div>
+												<div class="small fw-semibold">0 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">2 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">05:12</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$329.02</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">Unpaid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">9</div>
+												<div class="small fw-semibold">4 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">2 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">52:58</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$49.50</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">Unpaid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table in-use">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">10</div>
+												<div class="small fw-semibold">12 orders</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">9 / 12</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">66:69</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">$768.24</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center text-success">
+														<div class="w-20px"><iconify-icon icon="material-symbols-light:check-circle-outline" class="fs-16px d-block text-success"></iconify-icon></div>
+														<div class="w-60px">Paid</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table disabled">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">11</div>
+												<div class="small fw-semibold">Reserved for Sean</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 4</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">12</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">13</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">14</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">15</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">16</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">17</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">18</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">19</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="col-xl-3 col-lg-4 col-md-6 p-1px">
+									<div class="pos-checkout-table available">
+										<a href="#" class="pos-checkout-table-container text-uppercase" data-toggle="select-table">
+											<div class="pos-checkout-table-header">
+												<div class="status"><i class="fa fa-circle"></i></div>
+												<div class="small fw-semibold">TABLE</div>
+												<div class="fs-1 fw-bold mb-0 text-body">20</div>
+												<div class="small fw-semibold">max 6 pax</div>
+											</div>
+											<div class="pos-checkout-table-info">
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:users-group-rounded-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">0 / 6</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:clock-circle-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bill-list-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+													<div class="col-6 d-flex justify-content-center">
+														<div class="w-20px"><iconify-icon icon="solar:bag-smile-line-duotone" class="fs-16px d-block"></iconify-icon></div>
+														<div class="w-60px">-</div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END pos-counter-content -->
+				
+					<!-- BEGIN pos-sidebar -->
+					<div class="pos-sidebar" id="pos-sidebar">
+						<!-- BEGIN pos-sidebar-header -->
+						<div class="pos-sidebar-header text-uppercase border-bottom">
+							<div class="back-btn">
+								<button type="button" data-toggle-class="pos-mobile-sidebar-toggled" data-toggle-target="#pos" class="btn">
+									<i class="fa fa-chevron-left"></i>
+								</button>
+							</div>
+							<div class="title">Table 01</div>
+							<div class="order">Order: <span class="fw-semibold">#0001</span></div>
+						</div>
+						<!-- END pos-sidebar-header -->
+						
+						<!-- BEGIN pos-sidebar-body -->
+						<div class="pos-sidebar-body" data-scrollbar="true" data-height="100%">
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-2.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Grill Pork Chop</div>
+												<div class="fw-semibold text-body text-opacity-75">$12.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: large</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$12.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-8.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Orange Juice</div>
+												<div class="fw-semibold text-body text-opacity-75">$5.00</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: large<br>- less ice</div>
+											</div>
+											<div class="col-2 text-center">x2</div>
+											<div class="col-3 fw-semibold text-body text-end">$10.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-13.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Vanilla Ice-cream</div>
+												<div class="fw-semibold text-body text-opacity-75">$3.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- scoop: 1 <br>- flavour: vanilla</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$3.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-1.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Grill chicken chop</div>
+												<div class="fw-semibold text-body text-opacity-75">$3.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: large<br>- spicy: medium</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$10.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-10.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Mushroom Soup</div>
+												<div class="fw-semibold text-body text-opacity-75">$3.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: large<br>- more cheese</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$3.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-5.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Hawaiian Pizza</div>
+												<div class="fw-semibold text-body text-opacity-75">$15.00</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: large<br>- more onion</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$15.00</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-15.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Perfect Yeast Doughnuts</div>
+												<div class="fw-semibold text-body text-opacity-75">$2.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: 1 set<br>- flavour: random</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$2.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+							<!-- BEGIN pos-order -->
+							<div class="pos-order py-3">
+								<div class="pos-order-product">
+									<div class="img" style="background-image: url(assets/img/pos/product-14.jpg)"></div>
+									<div class="flex-1">
+										<div class="row">
+											<div class="col-7">
+												<div class="text-uppercase text-body fw-semibold">Macarons</div>
+												<div class="fw-semibold text-body text-opacity-75">$4.99</div>
+												<div class="text-body text-opacity-50 small fw-semibold">- size: 1 set<br>- flavour: random</div>
+											</div>
+											<div class="col-2 text-center">x1</div>
+											<div class="col-3 fw-semibold text-body text-end">$4.99</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END pos-order -->
+						</div>
+						<!-- END pos-sidebar-body -->
+						
+						<!-- BEGIN pos-sidebar-footer -->
+						<div class="pos-sidebar-footer text-uppercase">
+							<div class="d-flex align-items-center mb-2">
+								<div class="fw-semibold">Subtotal</div>
+								<div class="flex-1 text-end fs-6 fw-semibold">$64.94</div>
+							</div>
+							<div class="d-flex align-items-center">
+								<div class="fw-semibold">Taxes (6%)</div>
+								<div class="flex-1 text-end fs-6 fw-semibold">$3.90</div>
+							</div>
+							<hr />
+							<div class="d-flex align-items-center mb-2">
+								<div class="fw-semibold">Total</div>
+								<div class="flex-1 text-end fs-4 fw-bold">$68.84</div>
+							</div>
+							<div class="mt-3">
+								<div class="d-flex">
+									<a href="#" class="btn btn-secondary btn-sm w-70px">
+										<iconify-icon icon="solar:soundwave-line-duotone" class="d-flex fs-24px justify-content-center mt-1"></iconify-icon>
+										<span>E-WALLET</span>
+									</a>
+									<span class="w-10px"></span>
+									<a href="#" class="btn btn-secondary btn-sm w-70px">
+										<iconify-icon icon="solar:bill-list-line-duotone" class="d-flex fs-24px justify-content-center mt-1"></iconify-icon>
+										<span>BILL</span>
+									</a>
+									<span class="w-10px"></span>
+									<a href="#" class="btn btn-success btn-sm flex-fill">
+										<iconify-icon icon="solar:wallet-money-line-duotone" class="d-flex fs-24px justify-content-center mt-1"></iconify-icon>
+										<span>CASH</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- END pos-sidebar-footer -->
+					</div>
+					<!-- END pos-sidebar -->
+				</div>
+				<!-- END pos-container -->
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="assets/js/demo/pos-counter-checkout.demo.js"></script>
+'}}

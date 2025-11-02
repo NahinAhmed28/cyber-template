@@ -1,0 +1,174 @@
+{{> head pageTitle='Chart.js' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar chartsClass=' active' chartJsClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">CHARTS</a></li>
+				<li class="breadcrumb-item active">CHART.JS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Chart.js <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding flex-1">
+					<div class="row justify-content-center py-3">
+						<div class="col-xl-8">
+							<!-- BEGIN #chartJs -->
+							<div id="chartJs">
+								<h4>Basic Example</h4>
+								<p>Chart.js is a simple yet flexible JavaScript charting for designers & developers. Please read the <a href="https://www.chartjs.org/" target="_blank">official documentation</a> for the full list of options.</p>
+							</div>
+							<!-- END #chartJs -->
+							
+							<!-- BEGIN #chartJsLineChart -->
+							<div id="chartJsLineChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>LINE CHART</h6>
+										<div class="ratio ratio-21x9">
+											<div>
+												<canvas id="lineChart"></canvas>
+											</div>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-1.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsLineChart -->
+							
+							<!-- BEGIN #chartJsBarChart -->
+							<div id="chartJsBarChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>BAR CHART</h6>
+										<div class="ratio ratio-21x9">
+											<div>
+												<canvas id="barChart"></canvas>
+											</div>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-2.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsBarChart -->
+							
+							<!-- BEGIN #chartJsRadarChart -->
+							<div id="chartJsRadarChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>RADAR CHART</h6>
+										<div class="ratio ratio-21x9">
+											<div>
+												<canvas id="radarChart"></canvas>
+											</div>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-3.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsRadarChart -->
+							
+							<!-- BEGIN #chartJsPolarAreaChart -->
+							<div id="chartJsPolarAreaChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>POLAR AREA CHART</h6>
+										<div class="h-300px w-300px mx-auto">
+											<canvas id="polarAreaChart"></canvas>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-4.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsPolarAreaChart -->
+							
+							<!-- BEGIN #chartJsPieChart -->
+							<div id="chartJsPieChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>PIE CHART</h6>
+										<div class="h-300px w-300px mx-auto">
+											<canvas id="pieChart"></canvas>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-5.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsPieChart -->
+							
+							<!-- BEGIN #chartJsDoughnutChart -->
+							<div id="chartJsDoughnutChart" class="mb-5">
+								<div class="card">
+									<div class="card-body">
+										<h6>DOUGHNUT CHART</h6>
+										<div class="h-300px w-300px mx-auto">
+											<canvas id="doughnutChart"></canvas>
+										</div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/chart-js/code-6.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #chartJsDoughnutChart -->
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+				
+				<div class="w-250px d-none d-md-block border-start">
+					<nav id="sidebarBootstrap" class="navbar navbar-sticky d-none d-md-block">
+						<nav class="nav text-uppercase">
+							<div class="nav-header">On This Page</div>
+							<a class="nav-link" href="#chartJs" data-toggle="scroll-to" data-scroll-container="#scrollbar">Chart.js</a>
+							<a class="nav-link" href="#chartJsLineChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">line chart</a>
+							<a class="nav-link" href="#chartJsBarChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">bar chart</a>
+							<a class="nav-link" href="#chartJsRadarChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">radar chart</a>
+							<a class="nav-link" href="#chartJsPolarAreaChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">polar area chart</a>
+							<a class="nav-link" href="#chartJsPieChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">pie chart</a>
+							<a class="nav-link" href="#chartJsDoughnutChart" data-toggle="scroll-to" data-scroll-container="#scrollbar">doughnut chart</a>
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/plugins/chart.js/dist/chart.umd.js"></script>
+	<script src="assets/js/demo/chart-js.demo.js"></script>
+	<script src="assets/js/demo/sidebar-scrollspy.demo.js"></script>
+'}}

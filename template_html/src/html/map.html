@@ -1,0 +1,85 @@
+{{> head pageTitle='Map' pageCss='
+	<link href="assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+'}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar mapClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<div class="app-content-header">
+				<div class="page-header">
+					Map <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding flex-1">
+					<div class="row justify-content-center py-3">
+						<div class="col-xl-8">
+							<!-- BEGIN #jVectorMap -->
+							<div id="jVectorMap" class="mb-5">
+								<h4>jVectorMap</h4>
+								<p>jVectorMap uses only native browser technologies like JavaScript, CSS, HTML, SVG or VML. No Flash or any other proprietary browser plug-in is required. This allows jVectorMap to work in all modern mobile browsers. Please read the <a href="https://jvectormap.com/" target="_blank">official documentation</a> for the full list of options.</p>
+								<div class="card">
+									<div class="card-body">
+										<div id="jvectorMap" style="height: 300px;"></div>
+									</div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/map/code-1.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #jVectorMap -->
+							
+							<!-- BEGIN #googleMap -->
+							<div id="googleMap" class="mb-5">
+								<h4>Google map</h4>
+								<p>Google Maps is a web mapping service developed by Google. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle and air, or public transportation. Please read the <a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank">official documentation</a> for the full list of options.</p>
+								<div class="card">
+									<div class="card-body"><div id="googleMapDefault" style="height: 300px;"></div></div>
+									
+									<div class="hljs-container">
+										<pre><code class="xml" data-url="assets/data/map/code-2.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #googleMap -->
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+				
+				<div class="w-250px d-none d-md-block border-start">
+					<nav id="sidebarBootstrap" class="navbar navbar-sticky d-none d-md-block">
+						<nav class="nav text-uppercase">
+							<div class="nav-header">On This Page</div>
+							<a class="nav-link" href="#jVectorMap" data-toggle="scroll-to" data-scroll-container="#scrollbar">jVectorMap</a>
+							<a class="nav-link" href="#googleMap" data-toggle="scroll-to" data-scroll-container="#scrollbar">Google map</a>
+						</nav>
+					</nav>
+				</div>
+			</div>
+			<!-- END container -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+	<script src="assets/js/demo/map.demo.js"></script>
+	<script src="assets/js/demo/sidebar-scrollspy.demo.js"></script>
+'}}

@@ -1,0 +1,262 @@
+{{> head pageTitle='Modal & Notifications' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar uiKitsClass=' active' modalNotificationClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">UI KITS</a></li>
+				<li class="breadcrumb-item active">MODAL & NOTIFICATION</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Modal & Notification <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding flex-1">
+					<div class="row justify-content-center py-3">
+						<div class="col-xl-8">
+							<!-- BEGIN #modal -->
+							<div id="modal" class="mb-5">
+								<h4>Modal</h4>
+								<p>Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content. Please read the <a href="https://getbootstrap.com/docs/5.3/components/modal/" target="_blank">official Bootstrap documentation</a> for the full list of options.</p>
+								<div class="card">
+									<div class="card-body">
+										<div class="modal position-static d-block">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title">MODAL TITLE</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+													</div>
+													<div class="modal-body">
+														<p>Modal body text goes here.</p>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-outline-default" data-bs-dismiss="modal">CLOSE</button>
+														<button type="button" class="btn btn-outline-theme">SAVE CHANGES</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="hljs-container border-0 border-top">
+										<pre><code class="xml" data-url="assets/data/ui-modal-notification/code-1.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #modal -->
+							
+							<!-- BEGIN #modalSizes -->
+							<div id="modalSizes" class="mb-5">
+								<h4>Modal Sizes</h4>
+								<p>Modals have three optional sizes, available via modifier classes to be placed on a <code>.modal-dialog</code>. These sizes kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.</p>
+								<div class="card">
+									<div class="card-body">
+										<!-- modal-xl -->
+										<button type="button" class="btn btn-outline-theme me-2" data-bs-toggle="modal" data-bs-target="#modalXl">EXTRA LARGE MODAL</button>
+										
+										<!-- modal-lg -->
+										<button type="button" class="btn btn-outline-theme me-2" data-bs-toggle="modal" data-bs-target="#modalLg">LARGE MODAL</button>
+										
+										<!-- modal-sm -->
+										<button type="button" class="btn btn-outline-theme me-2" data-bs-toggle="modal" data-bs-target="#modalSm">SMALL MODAL</button>
+									</div>
+									<div class="hljs-container border-0 border-top">
+										<pre><code class="xml" data-url="assets/data/ui-modal-notification/code-2.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #modalSizes -->
+							
+							<!-- BEGIN #modalCover -->
+							<div id="modalCover" class="mb-5">
+								<h4>Modal Cover</h4>
+								<p>Modal cover is an extended feature from Bootstrap modal. It provide the same background color as the modal content. Place a <code>.modal-cover</code> css class on <code>.modal</code> for full cover modal.</p>
+								<div class="card">
+									<div class="card-body">
+										<!-- modal-cover -->
+										<button type="button" class="btn btn-outline-theme me-2" data-bs-toggle="modal" data-bs-target="#modalCoverExample">MODAL COVER</button>
+									</div>
+									<div class="hljs-container border-0 border-top">
+										<pre><code class="xml" data-url="assets/data/ui-modal-notification/code-3.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #modalCover -->
+							
+							<!-- BEGIN #toastsNotification -->
+							<div id="toastsNotification" class="mb-5">
+								<h4>Toasts Notification</h4>
+								<p>Push notifications to your visitors with a toast, a lightweight and easily customizable alert message. Please read the <a href="https://getbootstrap.com/docs/5.3/components/toasts/" target="_blank">official Bootstrap documentation</a> for the full list of options.</p>
+								<div class="card">
+									<div class="card-body">
+										<div class="toast show">
+											<div class="toast-header text-theme">
+												<i class="fa fa-fw fa-bell opacity-5 me-2"></i>
+												<strong class="flex-1">BOOTSTRAP</strong>
+												<small class="text-muted">11 mins ago</small>
+												<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+											</div>
+											<div class="toast-body">
+												Hello, world! This is a toast message.
+											</div>
+										</div>
+									</div>
+									<div class="hljs-container border-0 border-top">
+										<pre><code class="xml" data-url="assets/data/ui-modal-notification/code-4.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #toastsNotification -->
+							
+							<!-- BEGIN #toastsContainer -->
+							<div id="toastsContainer" class="mb-5">
+								<h4>Toasts Container</h4>
+								<p>Toasts container is an extended ui from Bootstrap toasts. Wrap the toasts with <code>.toasts-container</code> will allow toast to float within the right top position.</p>
+								<div class="card">
+									<div class="card-body">
+										<a href="#" class="btn btn-outline-theme me-2" data-toggle="toast" data-target="#toast-1">SHOW TOAST 1</a>
+										<a href="#" class="btn btn-outline-theme" data-toggle="toast" data-target="#toast-2">SHOW TOAST 2</a>
+									</div>
+									<div class="hljs-container border-0 border-top">
+										<pre><code class="xml" data-url="assets/data/ui-modal-notification/code-5.json"></code></pre>
+									</div>
+								</div>
+							</div>
+							<!-- END #toastsNotification -->
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+				
+				<div class="w-250px d-none d-md-block border-start">
+					<nav id="sidebarBootstrap" class="navbar navbar-sticky d-none d-md-block">
+						<nav class="nav text-uppercase">
+							<div class="nav-header">On This Page</div>
+							<a class="nav-link" href="#modal" data-toggle="scroll-to" data-scroll-container="#scrollbar">Modal</a>
+							<a class="nav-link" href="#modalSizes" data-toggle="scroll-to" data-scroll-container="#scrollbar">Modal Sizes</a>
+							<a class="nav-link" href="#modalCover" data-toggle="scroll-to" data-scroll-container="#scrollbar">Modal Cover</a>
+							<a class="nav-link" href="#toastsNotification" data-toggle="scroll-to" data-scroll-container="#scrollbar">Toasts Notification</a>
+							<a class="nav-link" href="#toastsContainer" data-toggle="scroll-to" data-scroll-container="#scrollbar">Toasts Container</a>
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		<!-- BEGIN toasts-container -->
+		<div class="toasts-container">
+			<div class="toast fade hide mb-3" data-autohide="false" id="toast-1">
+				<div class="toast-header text-theme gap-2">
+					<i class="fa fa-fw fa-bell opacity-5"></i>
+					<strong class="flex-1">BOOTSTRAP</strong>
+					<small class="text-muted">11 mins ago</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+				</div>
+				<div class="toast-body">
+					Hello, world! This is a toast message.
+				</div>
+			</div>
+			<div class="toast fade hide mb-3" data-autohide="false" id="toast-2">
+				<div class="toast-header text-theme gap-2">
+					<i class="fa fa-fw fa-bell opacity-5"></i>
+					<strong class="flex-1">BOOTSTRAP</strong>
+					<small class="text-muted">2 seconds ago</small>
+					<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+				</div>
+				<div class="toast-body">
+					See? Just like this.
+				</div>
+			</div>
+		</div>
+		<!-- END toasts-container -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+	<!-- BEGIN modal -->
+	<div class="modal modal-cover fade" id="modalCoverExample">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="modal-title">Sign Up!</h3>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					<p class="mb-3">
+						25% Off On Your First Purchase* Enter code WELCOME at checkout<br>
+						Discover new apps, things to do & more great news added daily!
+					</p>
+					<div class="row mb-5">
+						<div class="col-md-9">
+							<input type="text" placeholder="Your email address here" class="form-control form-control-lg" name="icon-filter">
+						</div>
+						<div class="col-md-3">
+							<button type="button" class="btn btn-outline-theme btn-lg btn-block">CONTINUE</button>
+						</div>
+					</div>
+					<div class="pt-3">
+						<a href="#" class="text-muted fs-12px">What is it? Terms and conditions</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalXl">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">EXTRA LARGE MODAL</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalLg">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">LARGE MODAL</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modalSm">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">SMALL MODAL</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END modal -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+	<script src="assets/js/demo/ui-modal-notification.demo.js"></script>
+	<script src="assets/js/demo/sidebar-scrollspy.demo.js"></script>
+'}}

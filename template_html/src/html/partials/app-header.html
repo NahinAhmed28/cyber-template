@@ -1,0 +1,403 @@
+<!-- BEGIN #appHeader -->
+<div id="appHeader" class="app-header{{ headerClass}}"{{ headerAttr }}>
+	<!-- BEGIN brand -->
+	<div class="brand">
+		<!-- BEGIN desktop-toggler -->
+		<div class="desktop-toggler">
+			<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-collapsed" data-toggle-target=".app">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+		</div>
+		<!-- END desktop-toggler -->
+	
+		<!-- BEGIN mobile-toggler -->
+		<div class="mobile-toggler">
+			{{#if appTopNav}}
+			<button type="button" class="menu-toggler" data-toggle="app-top-nav-mobile">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+			{{else}}
+			<button type="button" class="menu-toggler" data-toggle-class="app-sidebar-mobile-toggled" data-toggle-target=".app">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+			{{/if}}
+		</div>
+		<!-- END mobile-toggler -->
+		
+		<!-- BEGIN brand-logo -->
+		<a href="index.html" class="brand-logo">
+			<iconify-icon icon="solar:atom-line-duotone" class="fs-18px text-theme"></iconify-icon>
+			<span>CYBER <span class="opacity-5">ADMIN</span></span>
+		</a>
+		<!-- END brand-logo -->
+	</div>
+	<!-- END brand -->
+	
+	<!-- BEGIN menu -->
+	<div class="menu">
+		<div class="menu-item d-none d-xl-flex">
+			<a href="#" class="menu-link fw-bold ms-1px" data-bs-toggle="dropdown">
+				SERVER LINUX <b class="caret ms-n1 opacity-3"></b>
+			</a>
+			<div class="dropdown-menu text-uppercase">
+				<a class="dropdown-item" href="#">Ubuntu</a>
+				<a class="dropdown-item" href="#">CentOS</a>
+				<a class="dropdown-item" href="#">RedHat</a>
+			</div>
+		</div>
+		<div class="menu-item d-none d-xl-flex">
+			<a href="#" class="menu-link fw-bold" data-bs-toggle="dropdown">
+				DEVELOPMENT <b class="caret ms-n1 opacity-3"></b>
+			</a>
+			<div class="dropdown-menu text-uppercase">
+				<a class="dropdown-item" href="#">Frontend</a>
+				<a class="dropdown-item" href="#">Backend</a>
+				<a class="dropdown-item" href="#">DevOps</a>
+			</div>
+		</div>
+		<div class="menu-item d-none d-xl-flex">
+			<a href="#" class="menu-link fw-bold">
+				REVENUE <span class="ms-n1">$30,203</span>
+			</a>
+		</div>
+		<div class="menu-item menu-item flex-1">
+			<div class="hud-line-lg h-100"></div>
+		</div>
+		<div class="menu-item">
+			<div class="menu-item-icon d-none d-xl-flex">
+				<a href="#" class="menu-link" data-toggle="fullscreen" data-fullscreen-title="ENTER FULLSCREEN" data-exit-fullscreen-title="EXIT FULLSCREEN">
+					<div class="menu-icon"><i class="nav-icon bi-fullscreen"></i></div>
+				</a>
+			</div>
+			<div class="menu-item-icon ps-1 ps-xl-0">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link menu-link-icon">
+					<div class="menu-icon"><i class="nav-icon bi-chat-left-text"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end w-300px p-0 mt-4px">
+					<div class="card border-0">
+						<div class="card-header bg-none fw-bold d-flex align-items-center small">DISCUSSION GROUP</div>
+						<div class="card-body bg-inverse bg-opacity-10" data-scrollbar="true" data-height="200px">
+							<div class="widget-chat">
+								<div class="widget-chat-item">
+									<div class="widget-chat-media"><img src="assets/img/user/user-2.jpg" alt=""></div>
+									<div class="widget-chat-content">
+										<div class="widget-chat-name">Roberto Lambert</div>
+										<div class="widget-chat-message last">
+											Hey, I'm testing out group messaging.
+										</div>
+									</div>
+								</div>
+								<div class="widget-chat-item reply">
+									<div class="widget-chat-content">
+										<div class="widget-chat-message last">
+											Cool
+										</div>
+										<div class="widget-chat-status"><b>Read</b> 16:26</div>
+									</div>
+								</div>
+								<div class="widget-chat-date">Today 14:21</div>
+								<div class="widget-chat-item">
+									<div class="widget-chat-media"><img src="assets/img/user/user-3.jpg" alt=""></div>
+									<div class="widget-chat-content">
+										<div class="widget-chat-name">Rick Powell</div>
+										<div class="widget-chat-message last">
+											Awesome! What's new?
+										</div>
+									</div>
+								</div>
+								<div class="widget-chat-item">
+									<div class="widget-chat-media"><img src="assets/img/user/user-2.jpg" alt=""></div>
+									<div class="widget-chat-content">
+										<div class="widget-chat-name">Roberto Lambert</div>
+										<div class="widget-chat-message">
+											Not much, It's got a new look, contact pics show up in group messaging, some other small stuff.
+										</div>
+										<div class="widget-chat-message last">
+											How's crusty old iOS 6 treating you?
+										</div>
+									</div>
+								</div>
+								<div class="widget-chat-item reply">
+									<div class="widget-chat-content">
+										<div class="widget-chat-message last">
+											Sucks
+										</div>
+										<div class="widget-chat-status"><b>Read</b> 16:30</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dropdown-divider m-0"></div>
+					<a href="page_messenger.html" class="dropdown-item text-center p-2">
+						VIEW MORE
+					</a>
+				</div>
+			</div>
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link menu-link-icon">
+					<div class="menu-icon"><i class="nav-icon bi-calendar-date"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end w-300px p-0 mt-4px">
+					<div class="card border-0">
+						<div class="card-header small fw-bold">TODAY, NOV 4</div>
+						<div class="widget-reminder">
+							<div class="widget-reminder-item">
+								<div class="widget-reminder-time">09:00<br />12:00</div>
+								<div class="widget-reminder-divider bg-success"></div>
+								<div class="widget-reminder-content">
+									<div class="fw-bold">Meeting with HR</div>
+									<div class="text-body text-opacity-50"> - Conference Room</div>
+								</div>
+							</div>
+							<div class="widget-reminder-item">
+								<div class="widget-reminder-time">20:00<br />23:00</div>
+								<div class="widget-reminder-divider bg-primary"></div>
+								<div class="widget-reminder-content">
+									<div class="fw-bold">Dinner with Richard</div>
+									<div class="text-body text-opacity-50"> - Tom's Too Restaurant</div>
+									<div class="d-flex align-items-center mt-2">
+										<div class="flex-fill d-flex align-items-center">
+											<img src="assets/img/user/user-3.jpg" alt="" width="16" class="rounded-circle me-2"> Richard Leong
+										</div>
+										<a href="#" class="ms-auto link-secondary">Contact</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-header small fw-bold">TOMORROW, NOV 5</div>
+						<div class="widget-reminder">
+							<div class="widget-reminder-item">
+								<div class="widget-reminder-time">All day</div>
+								<div class="widget-reminder-divider bg-gray-300"></div>
+								<div class="widget-reminder-content">
+									<div class="fw-bold">Terry Birthday</div>
+								</div>
+							</div>
+							<div class="widget-reminder-item">
+								<div class="widget-reminder-time">08:00</div>
+								<div class="widget-reminder-divider bg-gray-300"></div>
+								<div class="widget-reminder-content">
+									<div class="fw-bold">Meeting</div>
+								</div>
+							</div>
+							<div class="widget-reminder-item">
+								<div class="widget-reminder-time">00:00<br>00:30</div>
+								<div class="widget-reminder-divider bg-gray-300"></div>
+								<div class="widget-reminder-content">
+									<div class="fw-bold">Server Maintenance</div>
+									<div class="text-body text-opacity-50"> - Data Centre</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="dropdown-divider m-0"></div>
+					<a href="calendar.html" class="dropdown-item text-center p-2">
+						VIEW MORE
+					</a>
+				</div>
+			</div>
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link menu-link-icon">
+					<div class="menu-icon"><i class="nav-icon bi-bell"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end w-300px p-0 mt-4px">
+					<h6 class="dropdown-header fw-semibold py-2">NOTIFICATIONS</h6>
+					
+					<div class="list-group list-group-flush border-top border-bottom">
+						<a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+							<div class="w-35px h-35px d-flex align-items-center justify-content-center bg-white bg-opacity-15 text-body text-opacity-75 fs-5">
+								<i class="bi bi-envelope fa-lg"></i>
+							</div>
+							<div class="flex-1 ps-3 overflow-hidden d-flex gap-3">
+								<div class="flex-1 overflow-hidden">
+									<div class="fw-bold text-uppercase text-truncate">New email received</div>
+									<div class="small text-body text-opacity-50 text-truncate">You have a new email from John Doe.</div>
+								</div>
+								<div class="small text-body text-opacity-50 w-20px text-end">2m</div>
+							</div>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action d-flex flex-wrap align-items-center">
+							<div class="w-35px h-35px d-flex align-items-center justify-content-center bg-white bg-opacity-15 text-body text-opacity-75 fs-5">
+								<i class="bi bi-calendar4-week fa-lg"></i>
+							</div>
+							<div class="flex-1 ps-3 overflow-hidden d-flex gap-3">
+								<div class="flex-1 overflow-hidden">
+									<div class="fw-bold text-uppercase text-truncate">Meeting reminder: Tomorrow at 9:00 AM</div>
+									<div class="small text-body text-opacity-50 text-truncate">Don't forget your meeting with the client.</div>
+								</div>
+								<div class="small text-body text-opacity-50 w-20px text-end">1h</div>
+							</div>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action d-flex flex-wrap align-items-center">
+							<div class="w-35px h-35px d-flex align-items-center justify-content-center bg-white bg-opacity-15 text-body text-opacity-75 fs-5">
+								<i class="bi bi-list-task fa-lg"></i>
+							</div>
+							<div class="flex-1 ps-3 overflow-hidden d-flex gap-3">
+								<div class="flex-1 overflow-hidden">
+									<div class="fw-bold text-uppercase text-truncate flex-1">Task completed</div>
+									<div class="small text-body text-opacity-50 text-truncate">The task assigned to you has been completed.</div>
+								</div>
+								<div class="small text-body text-opacity-50 w-20px text-end">4h</div>
+							</div>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action d-flex flex-wrap align-items-center">
+							<div class="w-35px h-35px d-flex align-items-center justify-content-center bg-white bg-opacity-15 text-body text-opacity-75 fs-5">
+								<i class="bi bi-chat fa-lg"></i>
+							</div>
+							<div class="flex-1 ps-3 overflow-hidden d-flex gap-3">
+								<div class="flex-1 overflow-hidden">
+									<div class="fw-bold text-uppercase text-truncate flex-1">New comment on your post</div>
+									<div class="small text-body text-opacity-50 text-truncate">Someone commented on your recent post.</div>
+								</div>
+								<div class="small text-body text-opacity-50 w-20px text-end">10h</div>
+							</div>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action d-flex flex-wrap align-items-center">
+							<div class="w-35px h-35px d-flex align-items-center justify-content-center bg-white bg-opacity-15 text-body text-opacity-75 fs-5">
+								<i class="bi bi-arrow-clockwise fa-lg"></i>
+							</div>
+							<div class="flex-1 ps-3 overflow-hidden d-flex gap-3">
+								<div class="flex-1 overflow-hidden">
+									<div class="fw-bold text-uppercase text-truncate flex-1">System update scheduled</div>
+									<div class="small text-body text-opacity-50 text-truncate">There will be a system update tomorrow.</div>
+								</div>
+								<div class="small text-body text-opacity-50 w-20px text-end">1d</div>
+							</div>
+						</a>
+					</div>
+					<a class="dropdown-item fs-10px text-center py-2 d-block" href="messenger.html">VIEW ALL</a>
+				</div>
+			</div>
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link">
+					<div class="menu-icon"><i class="nav-icon bi-grid-3x3-gap"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end p-0 w-300px text-center mt-4px">
+					<div class="row g-0 border-bottom">
+						<div class="col-4 border-end">
+							<a href="email_inbox.html" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div class="position-relative">
+									<i class="bi bi-circle-fill position-absolute text-theme top-0 mt-n2 me-n2 fs-5px d-block text-center w-100"></i>
+									<i class="bi bi-envelope h2 opacity-5 d-block my-1"></i>
+								</div>
+								<div class="fw-semibold small">INBOX</div>
+							</a>
+						</div>
+						<div class="col-4 border-end">
+							<a href="pos_customer_order.html" target="_blank" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div><i class="bi bi-hdd-network h2 opacity-5 d-block my-1"></i></div>
+								<div class="fw-semibold small">POS SYSTEM</div>
+							</a>
+						</div>
+						<div class="col-4">
+							<a href="calendar.html" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div><i class="bi bi-calendar4 h2 opacity-5 d-block my-1"></i></div>
+								<div class="fw-semibold small">CALENDAR</div>
+							</a>
+						</div>
+					</div>
+					<div class="row g-0">
+						<div class="col-4 border-end">
+							<a href="helper.html" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div><i class="bi bi-terminal h2 opacity-5 d-block my-1"></i></div>
+								<div class="fw-semibold small">HELPER</div>
+							</a>
+						</div>
+						<div class="col-4 border-end">
+							<a href="settings.html" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div class="position-relative">
+									<i class="bi bi-circle-fill position-absolute text-theme top-0 mt-n2 me-n2 fs-5px d-block text-center w-100"></i>
+									<i class="bi bi-sliders h2 opacity-5 d-block my-1"></i>
+								</div>
+								<div class="fw-semibold small">SETTINGS</div>
+							</a>
+						</div>
+						<div class="col-4">
+							<a href="widgets.html" class="dropdown-item text-decoration-none p-3 bg-none">
+								<div><i class="bi bi-collection-play h2 opacity-5 d-block my-1"></i></div>
+								<div class="fw-semibold small">WIDGETS</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link">
+					<div class="menu-icon"><i class="nav-icon bi-globe"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end mt-4px">
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:us-4x3" class="fa-lg me-3"></iconify-icon> ENGLISH</a>
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:cn-4x3" class="fa-lg me-3"></iconify-icon> 中文</a>
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:my-4x3" class="fa-lg me-3"></iconify-icon> BAHASA MALAYSIA</a>
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:jp-4x3" class="fa-lg me-3"></iconify-icon> 日本語</a>
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:fr-4x3" class="fa-lg me-3"></iconify-icon> Français</a>
+					<a class="dropdown-item d-flex align-items-center" href="#"><iconify-icon icon="flag:es-4x3" class="fa-lg me-3"></iconify-icon> Español</a>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item menu-item-search d-none d-md-flex">
+			<span class="search-icon"><i class="bi bi-search"></i></span>
+			<input type="text" class="form-control" placeholder="Search" />
+			<span class="search-command">
+				<i class="bi bi-command"></i>
+				K
+			</span>
+		</div>
+		<div class="menu-item dropdown">
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link">
+					<div class="menu-icon"><i class="nav-icon bi-person-fill"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end mt-4px text-uppercase">
+					<h6 class="dropdown-header">Settings</h6>
+					<a class="dropdown-item" href="settings.html">General Settings</a>
+					<a class="dropdown-item" href="settings.html">System Preferences</a>
+					<a class="dropdown-item" href="settings.html">Security Settings</a>
+					<a class="dropdown-item" href="settings.html">Application Settings</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="settings.html">About</a>
+					<a class="dropdown-item" href="settings.html">Feedback</a>
+				</div>
+			</div>
+			<div class="menu-item-icon">
+				<a href="#" data-bs-toggle="dropdown" class="menu-link">
+					<div class="menu-icon"><i class="nav-icon bi-gear"></i></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end mt-4px text-uppercase">
+					<h6 class="dropdown-header">USER OPTIONS</h6>
+					<a class="dropdown-item" href="profile.html">VIEW PROFILE</a>
+					<a class="dropdown-item" href="settings.html">ACCOUNT SETTINGS</a>
+					<a class="dropdown-item" href="calendar.html">CALENDER SETTINGS</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="helper.html">HELP & SUPPORT</a>
+					<a class="dropdown-item" href="page_login.html">LOG OUT</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END menu -->
+	
+	<!-- BEGIN menu-search-mobile -->
+	<form class="menu-search-mobile" method="POST" name="header_search_form">
+		<div class="menu-search-container">
+			<span class="menu-search-icon"><i class="bi bi-search"></i></span>
+			<input type="text" class="form-control" placeholder="Search" />
+			<span class="menu-search-command">
+				<i class="bi bi-command"></i>
+				K
+			</span>
+			<div class="menu-search-icon">
+				<a href="#" data-toggle-class="app-header-menu-search-toggled" data-toggle-target=".app"><i class="bi bi-x-lg"></i></a>
+			</div>
+		</div>
+	</form>
+	<!-- END menu-search-mobile -->
+</div>
+<!-- END #appHeader -->

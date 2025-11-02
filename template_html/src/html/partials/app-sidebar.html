@@ -1,0 +1,494 @@
+<!-- BEGIN #appSidebar -->
+<div id="appSidebar" class="app-sidebar">
+	<!-- BEGIN scrollbar -->
+	<div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+		<!-- BEGIN menu -->
+		<div class="menu">
+			<div class="menu-profile">
+				<a href="javascript:;" class="menu-profile-link" data-bs-toggle="dropdown">
+					<div class="menu-profile-image text-body text-opacity-50">
+						<iconify-icon icon="solar:shield-user-line-duotone"></iconify-icon>
+					</div>
+					<div class="menu-profile-info">
+						<div class="d-flex align-items-center">
+							<div class="flex-1 fw-bold">
+								WELCOME BACK, JOHN DOE
+							</div>
+							<div class="d-flex opacity-5"><b class="caret"></b></div>
+						</div>
+						<small>LVL 100. SUPER ADMIN</small>
+					</div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end me-5">
+					<a class="dropdown-item d-flex align-items-center" href="profile.html">PROFILE</a>
+					<a class="dropdown-item d-flex align-items-center" href="email_inbox.html">INBOX</a>
+					<a class="dropdown-item d-flex align-items-center" href="calendar.html">CALENDAR</a>
+					<a class="dropdown-item d-flex align-items-center" href="settings.html">SETTINGS</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item d-flex align-items-center" href="page_login.html">LOGOUT</a>
+				</div>
+			</div>
+			
+			<div class="menu-header">
+				<div class="menu-title">NAVIGATION</div>
+				<div class="flex-1 pt-3px ps-1">
+					<div class="h-1px bg-white bg-opacity-25"></div>
+					<div class="py-3px d-flex">
+						<div class="hud-line flex-1 h-4px opacity-5"></div>
+						<div class="bg-white bg-opacity-25 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-50 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-75 h-5px w-10px ms-3px"></div>
+					</div>
+				</div>
+			</div>
+			<div class="h-1px bg-white bg-opacity-25 w-100 mb-2"></div>
+			
+			<div class="menu-item{{ homeClass }}">
+				<a href="index.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-ui-radios-grid"></i></span>
+					<span class="menu-text">DASHBOARD</span>
+				</a>
+			</div>
+			<div class="menu-item{{ analyticsClass }}">
+				<a href="analytics.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-bar-chart-line"></i></span>
+					<span class="menu-text">ANALYTICS</span>
+				</a>
+			</div>
+			<div class="menu-item has-sub{{ emailClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon">
+						<i class="bi-envelope"></i>
+					</span>
+					<span class="menu-text">EMAIL</span>
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ inboxClass }}">
+						<a href="email_inbox.html" class="menu-link">
+							<span class="menu-text">INBOX</span>
+						</a>
+					</div>
+					<div class="menu-item{{ composeClass }}">
+						<a href="email_compose.html" class="menu-link">
+							<span class="menu-text">COMPOSE</span>
+						</a>
+					</div>
+					<div class="menu-item{{ detailClass }}">
+						<a href="email_detail.html" class="menu-link">
+							<span class="menu-text">DETAIL</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="menu-header">
+				<div class="menu-title">COMPONENTS</div>
+				<div class="flex-1 pt-3px ps-1">
+					<div class="h-1px bg-white bg-opacity-25"></div>
+					<div class="py-3px d-flex">
+						<div class="hud-line flex-1 h-5px opacity-5"></div>
+						<div class="bg-white bg-opacity-25 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-50 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-75 h-5px w-10px ms-3px"></div>
+					</div>
+				</div>
+			</div>
+			<div class="h-1px bg-white bg-opacity-25 w-100 mb-2"></div>
+			
+			<div class="menu-item{{ widgetsClass }}">
+				<a href="widgets.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-gem"></i></span>
+					<span class="menu-text">WIDGETS</span>
+				</a>
+			</div>
+			<div class="menu-item has-sub{{ aiStudioClass }}">
+				<a href="javascript:;" class="menu-link">
+					<div class="menu-icon">
+						<i class="bi-cpu"></i>
+					</div>
+					<div class="menu-text d-flex align-items-center">AI STUDIO</div> 
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ aiChatClass }}">
+						<a href="ai_chat.html" class="menu-link">
+							<div class="menu-text">AI CHAT</div>
+						</a>
+					</div>
+					<div class="menu-item{{ aiImageGeneratorClass }}">
+						<a href="ai_image_generator.html" class="menu-link">
+							<div class="menu-text">AI IMAGE GENERATOR</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub">
+				<a href="javascript:;" class="menu-link">
+					<div class="menu-icon">
+						<i class="bi-bag"></i>
+					</div>
+					<div class="menu-text d-flex align-items-center">POS SYSTEM</div> 
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item">
+						<a href="pos_customer_order.html" target="_blank" class="menu-link">
+							<div class="menu-text">CUSTOMER ORDER</div>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="pos_kitchen_order.html" target="_blank" class="menu-link">
+							<div class="menu-text">KITCHEN ORDER</div>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="pos_counter_checkout.html" target="_blank" class="menu-link">
+							<div class="menu-text">COUNTER CHECKOUT</div>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="pos_table_booking.html" target="_blank" class="menu-link">
+							<div class="menu-text">TABLE BOOKING</div>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="pos_menu_stock.html" target="_blank" class="menu-link">
+							<div class="menu-text">MENU STOCK</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub{{ uiKitsClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-box"></i></span>
+					<span class="menu-text">UI KITS</span> 
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ bootstrapClass }}">
+						<a href="ui_bootstrap.html" class="menu-link">
+							<span class="menu-text">BOOTSTRAP</span>
+						</a>
+					</div>
+					<div class="menu-item{{ buttonsClass }}">
+						<a href="ui_buttons.html" class="menu-link">
+							<span class="menu-text">BUTTONS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ cardClass }}">
+						<a href="ui_card.html" class="menu-link">
+							<span class="menu-text">CARD</span>
+						</a>
+					</div>
+					<div class="menu-item{{ iconsClass }}">
+						<a href="ui_icons.html" class="menu-link">
+							<span class="menu-text">ICONS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ modalNotificationClass }}">
+						<a href="ui_modal_notification.html" class="menu-link">
+							<span class="menu-text">MODAL & NOTIFICATION</span>
+						</a>
+					</div>
+					<div class="menu-item{{ typographyClass }}">
+						<a href="ui_typography.html" class="menu-link">
+							<span class="menu-text">TYPOGRAPHY</span>
+						</a>
+					</div>
+					<div class="menu-item{{ tabsAccordionsClass }}">
+						<a href="ui_tabs_accordions.html" class="menu-link">
+							<span class="menu-text">TABS & ACCORDIONS</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub{{ formsClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-card-text"></i></span>
+					<span class="menu-text">FORMS</span> 
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ formElementsClass }}">
+						<a href="form_elements.html" class="menu-link">
+							<span class="menu-text">FORM ELEMENTS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ formPluginsClass }}">
+						<a href="form_plugins.html" class="menu-link">
+							<span class="menu-text">FORM PLUGINS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ wizardsClass }}">
+						<a href="form_wizards.html" class="menu-link">
+							<span class="menu-text">WIZARDS</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub{{ tablesClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-grid"></i></span>
+					<span class="menu-text">TABLES</span>
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ tableElementsClass }}">
+						<a href="table_elements.html" class="menu-link">
+							<span class="menu-text">TABLE ELEMENTS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ tablePluginsClass }}">
+						<a href="table_plugins.html" class="menu-link">
+							<span class="menu-text">TABLE PLUGINS</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub{{ chartsClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-pie-chart"></i></span>
+					<span class="menu-text">CHARTS</span>
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ chartJsClass }}">
+						<a href="chart_js.html" class="menu-link">
+							<span class="menu-text">CHART.JS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ ApexchartsClass }}">
+						<a href="chart_apex.html" class="menu-link">
+							<span class="menu-text">APEXCHARTS.JS</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item{{ mapClass }}">
+				<a href="map.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-globe-americas"></i></span>
+					<span class="menu-text">MAP</span>
+				</a>
+			</div>
+			<div class="menu-item has-sub{{ layoutClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-layers"></i></span>
+					<span class="menu-text">LAYOUT</span>
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ starterPageClass }}">
+						<a href="layout_starter.html" class="menu-link">
+							<span class="menu-text">STARTER PAGE</span>
+						</a>
+					</div>
+					<div class="menu-item{{ fixedFooterClass }}">
+						<a href="layout_fixed_footer.html" class="menu-link">
+							<span class="menu-text">FIXED FOOTER</span>
+						</a>
+					</div>
+					<div class="menu-item{{ fullHeightClass }}">
+						<a href="layout_full_height.html" class="menu-link">
+							<span class="menu-text">FULL HEIGHT</span>
+						</a>
+					</div>
+					<div class="menu-item{{ fullWidthClass }}">
+						<a href="layout_full_width.html" class="menu-link">
+							<span class="menu-text">FULL WIDTH</span>
+						</a>
+					</div>
+					<div class="menu-item{{ boxedLayoutClass }}">
+						<a href="layout_boxed_layout.html" class="menu-link">
+							<span class="menu-text">BOXED LAYOUT</span>
+						</a>
+					</div>
+					<div class="menu-item{{ collapsedSidebarClass }}">
+						<a href="layout_collapsed_sidebar.html" class="menu-link">
+							<span class="menu-text">COLLAPSED SIDEBAR</span>
+						</a>
+					</div>
+					<div class="menu-item{{ topNavClass }}">
+						<a href="layout_top_nav.html" class="menu-link">
+							<span class="menu-text">TOP NAV</span>
+						</a>
+					</div>
+					<div class="menu-item{{ mixedNavClass }}">
+						<a href="layout_mixed_nav.html" class="menu-link">
+							<span class="menu-text">MIXED NAV</span>
+						</a>
+					</div>
+					<div class="menu-item{{ mixedNavBoxedLayoutClass }}">
+						<a href="layout_mixed_nav_boxed_layout.html" class="menu-link">
+							<span class="menu-text">MIXED NAV BOXED LAYOUT</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item has-sub{{ pagesClass }}">
+				<a href="#" class="menu-link">
+					<span class="menu-icon"><i class="bi-gift"></i></span>
+					<span class="menu-text">PAGES</span>
+					<span class="menu-caret"><b class="caret"></b></span>
+				</a>
+				<div class="menu-submenu">
+					<div class="menu-item{{ scrumBoardClass }}">
+						<a href="page_scrum_board.html" class="menu-link">
+							<span class="menu-text">SCRUM BOARD</span>
+						</a>
+					</div>
+					<div class="menu-item{{ productsClass }}">
+						<a href="page_products.html" class="menu-link">
+							<span class="menu-text">PRODUCTS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ productDetailsClass }}">
+						<a href="page_product_details.html" class="menu-link">
+							<span class="menu-text">PRODUCT DETAILS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ ordersClass }}">
+						<a href="page_orders.html" class="menu-link">
+							<span class="menu-text">ORDERS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ orderDetailsClass }}">
+						<a href="page_order_details.html" class="menu-link">
+							<span class="menu-text">ORDER DETAILS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ galleryClass }}">
+						<a href="page_gallery.html" class="menu-link">
+							<span class="menu-text">GALLERY</span>
+						</a>
+					</div>
+					<div class="menu-item{{ searchResultsClass }}">
+						<a href="page_search_results.html" class="menu-link">
+							<span class="menu-text">SEARCH RESULTS</span>
+						</a>
+					</div>
+					<div class="menu-item{{ comingSoonClass }}">
+						<a href="page_coming_soon.html" class="menu-link">
+							<span class="menu-text">COMING SOON PAGE</span>
+						</a>
+					</div>
+					<div class="menu-item{{ errorPageClass }}">
+						<a href="page_404_error.html" class="menu-link">
+							<span class="menu-text">404 ERROR PAGE</span>
+						</a>
+					</div>
+					<div class="menu-item{{ loginClass }}">
+						<a href="page_login.html" class="menu-link">
+							<span class="menu-text">LOGIN</span>
+						</a>
+					</div>
+					<div class="menu-item{{ registerClass }}">
+						<a href="page_register.html" class="menu-link">
+							<span class="menu-text">REGISTER</span>
+						</a>
+					</div>
+					<div class="menu-item{{ messengerClass }}">
+						<a href="page_messenger.html" class="menu-link">
+							<span class="menu-text">MESSENGER</span>
+						</a>
+					</div>
+					<div class="menu-item{{ dataManagementClass }}">
+						<a href="page_data_management.html" class="menu-link">
+							<span class="menu-text">DATA MANAGEMENT</span>
+						</a>
+					</div>
+					<div class="menu-item{{ fileManagerClass }}">
+						<a href="page_file_manager.html" class="menu-link">
+							<span class="menu-text">FILE MANAGER</span>
+						</a>
+					</div>
+					<div class="menu-item{{ pricingPageClass }}">
+						<a href="page_pricing.html" class="menu-link">
+							<span class="menu-text">PRICING PAGE</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="menu-item{{ landingClass }}">
+				<a href="landing.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-rainbow"></i></span>
+					<span class="menu-text">LANDING PAGE</span>
+				</a>
+			</div>
+			
+			<div class="menu-header">
+				<div class="menu-title">USER PORTAL</div>
+				<div class="flex-1 pt-3px ps-1">
+					<div class="h-1px bg-white bg-opacity-25"></div>
+					<div class="py-3px d-flex">
+						<div class="hud-line flex-1 h-5px opacity-5"></div>
+						<div class="bg-white bg-opacity-25 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-50 h-5px w-10px ms-3px"></div>
+						<div class="bg-white bg-opacity-75 h-5px w-10px ms-3px"></div>
+					</div>
+				</div>
+			</div>
+			<div class="h-1px bg-white bg-opacity-25 w-100 mb-2"></div>
+			
+			<div class="menu-item{{ profileClass }}">
+				<a href="profile.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-person"></i></span>
+					<span class="menu-text">PROFILE</span>
+				</a>
+			</div>
+			<div class="menu-item{{ calendarClass }}">
+				<a href="calendar.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-calendar4"></i></span>
+					<span class="menu-text">CALENDAR</span>
+				</a>
+			</div>
+			<div class="menu-item{{ settingsClass }}">
+				<a href="settings.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-gear"></i></span>
+					<span class="menu-text">SETTINGS</span>
+				</a>
+			</div>
+			<div class="menu-item{{ helperClass }}">
+				<a href="helper.html" class="menu-link">
+					<span class="menu-icon"><i class="bi-question-octagon"></i></span>
+					<span class="menu-text">HELPER</span>
+				</a>
+			</div>
+		</div>
+		<!-- END menu -->
+		
+		<div class="mt-auto">
+			<div class="row row-gap-3 col-gap-2 mb-3 pt-3 fw-semibold">
+				<div class="col-6">
+					<div class="text-body text-opacity-75 small">SERVER STATUS</div>
+					<div class="text-body text-opacity-100 fw-bold">online</div>
+					<div class="text-body text-opacity-50 fs-8px fw-semibold">UPTIME: 3D 12H</div>
+				</div>
+				<div class="col-6">
+					<div class="text-body text-opacity-75 small">ACTIVE USER</div>
+					<div class="text-body text-opacity-100 fw-bold">128</div>
+					<div class="text-body text-opacity-50 fs-8px fw-semibold">LAST 5 MINS</div>
+				</div>
+				<div class="col-6">
+					<div class="text-body text-opacity-75 small">TODAY SALES</div>
+					<div class="text-body text-opacity-100 fw-bold">$4,732</div>
+					<div class="text-body text-opacity-50 fs-8px fw-semibold">UPDATED JUST NOW</div>
+				</div>
+				<div class="col-6">
+					<div class="text-body text-opacity-75 small">PROJECT API</div>
+					<div class="text-body text-opacity-100 fw-bold">degraded</div>
+					<div class="text-body text-opacity-50 fs-8px fw-semibold">LATENCY: 812ms</div>
+				</div>
+			</div>
+			<a href="https://seantheme.com/cyber/documentation/index.html" target="_blank" class="btn d-block fw-semibold btn-outline-theme">
+				DOCUMENTATION
+			</a>
+		</div>
+	</div>
+	<!-- END scrollbar -->
+</div>
+<!-- END #appSidebar -->
+	
+<!-- BEGIN mobile-sidebar-backdrop -->
+<button class="app-sidebar-mobile-backdrop" data-toggle-target=".app" data-toggle-class="app-sidebar-mobile-toggled"></button>
+<!-- END mobile-sidebar-backdrop -->

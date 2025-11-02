@@ -1,0 +1,241 @@
+{{> head pageTitle='Order Details' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar pagesClass=' active' orderDetailsClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">PAGES</a></li>
+				<li class="breadcrumb-item active">ORDER DETAILS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Order Details <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="px-3 py-2 border-bottom" data-scrollbar="true">
+				<div class="d-flex gap-3 text-nowrap text-uppercase fw-semibold">
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-print fa-fw text-body text-opacity-25"></i> Print</a></div>
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-boxes fa-fw text-body text-opacity-25"></i> Restock items</a></div>
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-pen fa-fw text-body text-opacity-25"></i> Edit</a></div>
+					<div>
+						<a href="#" data-bs-toggle="dropdown" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"> More Actions <b class="caret opacity-25"></b></a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div role="separator" class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="app-content-inner-padding p-lg-4 flex-1">
+			
+					<div class="row gx-4">
+						<div class="col-lg-8 d-flex flex-column gap-3">
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">PRODUCTS (3)</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">Add Tracking Link</a>
+								</div>
+								<div class="card-body text-body">
+									<div class="row align-items-center fw-semibold">
+										<div class="col-lg-8 d-flex align-items-center">
+											<div class="d-flex align-items-center justify-content-center position-relative bg-white">
+												<img src="assets/img/product/product-1.jpg" alt="" class="object-fit-cover h-50px w-50px" />
+												<span class="w-15px h-15px p-0 d-flex align-items-center justify-content-center badge bg-white text-black position-absolute start-0 top-0 fw-bold">1</span>
+											</div>
+											<div class="ps-3 flex-1">
+												<div><a href="#" class="text-decoration-none text-body text-uppercase">iPhone 17 Pro Max</a></div>
+												<div class="text-body text-opacity-50 small">
+													SKU: IP17PROMAX-512
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 m-0 ps-lg-3">
+											$999 x 1
+										</div>
+										<div class="col-lg-2 m-0 text-end">
+											$999
+										</div>
+									</div>
+									<hr class="opacity-15" />
+									<div class="row align-items-center fw-semibold">
+										<div class="col-lg-8 d-flex align-items-center">
+											<div class="d-flex align-items-center justify-content-center position-relative bg-white">
+												<img src="assets/img/product/product-2.jpg" alt="" class="object-fit-cover h-50px w-50px" />
+												<span class="w-15px h-15px p-0 d-flex align-items-center justify-content-center badge bg-white text-black position-absolute start-0 top-0 fw-bold">1</span>
+											</div>
+											<div class="ps-3 flex-1">
+												<div class=""><a href="#" class="text-decoration-none text-body text-uppercase">Macbook Pro 2035</a></div>
+												<div class="text-body text-opacity-50 small">
+													SKU: MACBOOKPRO-1TB
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 m-0 ps-lg-3">
+											$1,999 x 1
+										</div>
+										<div class="col-lg-2 m-0 text-end">
+											$1,999
+										</div>
+									</div>
+									<hr class="opacity-15" />
+									<div class="row align-items-center fw-semibold">
+										<div class="col-lg-8 d-flex align-items-center">
+											<div class="d-flex align-items-center justify-content-center position-relative bg-white">
+												<img src="assets/img/product/product-3.jpg" alt="" class="object-fit-cover h-50px w-50px" />
+												<span class="w-15px h-15px p-0 d-flex align-items-center justify-content-center badge bg-white text-black position-absolute start-0 top-0 fw-bold">1</span>
+											</div>
+											<div class="ps-3 flex-1">
+												<div class=""><a href="#" class="text-decoration-none text-body text-uppercase">Apple Watch 15</a></div>
+												<div class="text-body text-opacity-50 small">
+													SKU: APPLEWATCHBLACK
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-2 m-0 ps-lg-3">
+											$599 x 1
+										</div>
+										<div class="col-lg-2 text-body m-0 text-end">
+											$599
+										</div>
+									</div>
+								</div>
+								<div class="card-footer bg-none d-flex gap-2 p-3">
+									<a href="#" class="btn btn-secondary ms-auto d-flex align-items-center gap-2">MORE <b class="caret opacity-5"></b></a>
+									<a href="#" class="btn btn-outline-light">ADD TRACKING</a>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">PAYMENT RECORDS</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">View paypal records</a>
+								</div>
+								<div class="card-body">
+									<table class="table table-borderless table-sm text-uppercase fw-semibold m-0">
+										<tbody>
+											<tr>
+												<td class="w-150px">Subtotal</td>
+												<td>3 items</td>
+												<td class="text-end">$3,496.00</td>
+											</tr>
+											<tr>
+												<td>Tax</td>
+												<td>GST 5%</td>
+												<td class="text-end">$174.80</td>
+											</tr>
+											<tr>
+												<td>Shipping Fee</td>
+												<td>promo code: <u class="text-success fw-semibold">FREESHIPPING</u> (<span class="text-decoration-line-through">$120.00</span>)</td>
+												<td class="text-end">$0.00</td>
+											</tr>
+											<tr>
+												<td class="pb-2" colspan="2"><b>Total</b></td>
+												<td class="text-end pb-2 text-decoration-underline"><b>$3670.80</b></td>
+											</tr>
+											<tr>
+												<td colspan="3">
+													<hr class="m-0">
+												</td>
+											</tr>
+											<tr>
+												<td class="pt-2 pb-2 text-nowrap">
+													Paid by customer
+												</td>
+												<td class="pt-2 pb-2">
+													via <a href="#" class="text-decoration-none text-body text-opacity-50">Paypal</a> (#IRU9589320)
+												</td>
+												<td class="pt-2 pb-2 text-end">$3670.80</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="card-footer bg-none d-flex p-3">
+									<a href="#" class="btn btn-success ms-auto">MARK AS PAID</a>
+								</div>
+								
+							</div>
+						</div>
+						<div class="col-lg-4 d-flex flex-column gap-3">
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">NOTES</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">EDIT</a>
+								</div>
+								<div class="card-body">
+									No notes from customer
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">CUSTOMER</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">EDIT</a>
+								</div>
+								<div class="card-body fw-semibold">
+									<div class="d-flex align-items-center gap-3">
+										<a href="#" class="d-block"><img src="assets/img/user/user-1.jpg" alt="" width="35" /></a>
+										<div class="flex-1 text-body text-opacity-50">
+											<a href="#" class="d-block text-decoration-none text-uppercase text-body">John Smith</a>
+											johnsmith@gmail.com
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">SHIPPING INFORMATION</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">EDIT</a>
+								</div>
+								<div class="card-body fw-semibold">
+									<i class="bi bi-telephone-fill fa-fw"></i> +916-663-4289<br /><br />
+									867 Highland View Drive<br />
+									Newcastle, CA<br />
+									California<br />
+									95658<br />
+									<br />
+									<a href="#" class="text-decoration-none text-body text-opacity-50 text-uppercase"><i class="bi bi-geo-alt-fill fa-fw"></i> View map</a>
+								</div>
+								
+							</div>
+							<div class="card">
+								<div class="card-header with-btn py-1">
+									<div class="fw-semibold">BILLING INFORMATION</div>
+									<div class="hud-line flex-1"></div>
+									<a href="#" class="ms-auto text-decoration-none text-body text-opacity-50 text-uppercase">EDIT</a>
+								</div>
+								<div class="card-body fw-bold">
+									867 Highland View Drive<br />
+									Newcastle, CA<br />
+									California<br />
+									95658<br />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END scrollbar -->
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='' }}

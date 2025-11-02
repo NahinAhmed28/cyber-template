@@ -1,0 +1,30 @@
+&lt;!-- BEGIN #app --&gt;
+&lt;div id="app" class="app"&gt;
+  &lt;!-- BEGIN #appContent --&gt;
+  &lt;div id="appContent" class="app-content p-0 d-flex flex-column"&gt;
+    &lt;!-- BEGIN breadcrumb --&gt;
+    &lt;ul class="breadcrumb border-bottom px-3 py-2 m-0"&gt;
+      &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;LAYOUT&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="breadcrumb-item active"&gt;FULL HEIGHT&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- END breadcrumb --&gt;
+  	
+    &lt;!-- BEGIN app-content-header --&gt;
+    &lt;div class="app-content-header"&gt;
+      &lt;div class="page-header"&gt;
+        &lt;!-- page header here --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- END breadcrumb --&gt;
+  	
+    &lt;!-- BEGIN app-content --&gt;
+    &lt;div class="flex-1 overflow-hidden"&gt;
+      &lt;div data-scrollbar="true" data-height="100%" class="app-content-inner-padding"&gt;
+        &lt;!-- content here --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  	&lt;!-- END app-content --&gt;
+  &lt;/div&gt;
+  &lt;!-- END #content --&gt;
+&lt;/div&gt;
+&lt;!-- END #app --&gt;

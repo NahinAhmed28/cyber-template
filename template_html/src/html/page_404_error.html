@@ -1,0 +1,43 @@
+{{> head pageTitle='Error Page' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-full-height app-without-header">
+		<!-- BEGIN error -->
+		<div class="error-page">
+			<!-- BEGIN error-page-content -->
+			<div class="error-page-content">
+				<div class="hud-line-lg mb-3 mt-n5"></div>
+				<div class="error-code">404</div>
+				<div class="hud-line-lg mt-3 mb-5"></div>
+				<h1 class="mt-5 mb-2">OOPS!</h1> 
+				<h6 class="fw-semibold text-body text-opacity-75 text-uppercase mb-3">We can't seem to find the page you're looking for</h6>
+				<hr class="w-40px mx-auto my-4 mb-5" />
+				<p class="mb-2 opacity-5 text-uppercase fw-bold">
+					Here are some helpful links instead:
+				</p>
+				<p class="mb-3 d-flex justify-content-center align-items-center px-3 flex-wrap gap-lg-3 gap-2 text-uppercase fw-semibold">
+					<a href="index.html" class="text-decoration-none text-body text-opacity-75">Home</a>
+					<span class="w-3px h-3px bg-white bg-opacity-25"></span>
+					<a href="page_search_results.html" class="text-decoration-none text-body text-opacity-75">Search</a>
+					<span class="w-3px h-3px bg-white bg-opacity-25"></span>
+					<a href="email_inbox.html" class="text-decoration-none text-body text-opacity-75">Email</a>
+					<span class="w-3px h-3px bg-white bg-opacity-25"></span>
+					<a href="calendar.html" class="text-decoration-none text-body text-opacity-75">Calendar</a>
+					<span class="w-3px h-3px bg-white bg-opacity-25"></span>
+					<a href="settings.html" class="text-decoration-none text-body text-opacity-75">Settings</a>
+					<span class="w-3px h-3px bg-white bg-opacity-25"></span>
+					<a href="helper.html" class="text-decoration-none text-body text-opacity-75">Helper</a>
+				</p>
+				<a href="javascript:window.history.back();" class="btn btn-outline-secondary px-3">BACK</a>
+			</div>
+			<!-- END error-page-content -->
+		</div>
+		<!-- END error -->
+
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='' }}

@@ -1,0 +1,44 @@
+{{> head pageTitle='Fixed Footer' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar layoutClass=' active' fixedFooterClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">LAYOUT</a></li>
+				<li class="breadcrumb-item active">FIXED FOOTER</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Fixed Footer <small>page header description goes here...</small>
+				</div>
+			</div>
+			<div class="app-content-inner-padding flex-1 overflow-scroll">
+				<p>
+					Set up the page like the example below to create a fixed footer page.
+				</p>
+				<div class="card">
+					<div class="hljs-container border-0">
+						<pre><code class="xml" data-url="assets/data/layout-fixed-footer/code-1.json"></code></pre>
+					</div>
+				</div>
+			</div>
+			
+			{{> app-footer }}
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+	<script src="assets/js/demo/highlightjs.demo.js"></script>
+'}}

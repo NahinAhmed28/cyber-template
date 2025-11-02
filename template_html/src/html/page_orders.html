@@ -1,0 +1,544 @@
+{{> head pageTitle='Orders' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar pagesClass=' active' ordersClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<ul class="breadcrumb border-bottom px-3 py-2 m-0">
+				<li class="breadcrumb-item"><a href="#">PAGES</a></li>
+				<li class="breadcrumb-item active">ORDERS</li>
+			</ul>
+			<div class="app-content-header">
+				<div class="page-header">
+					Orders <small>page header description goes here...</small>
+				</div>
+				<div class="ms-auto d-none d-md-block">
+					<a href="#" class="btn btn-outline-secondary"><i class="fa fa-plus-circle fa-fw me-1"></i> Create Orders</a>
+				</div>
+			</div>
+			<div class="p-3 border-bottom" data-scrollbar="true">
+				<!-- BEGIN input-group -->
+				<div class="input-group mb-3">
+					<div class="flex-fill position-relative">
+						<div class="input-group">
+							<input type="text" class="form-control px-30px" placeholder="Filter orders">
+							<div class="input-group-text position-absolute top-0 bottom-0 bg-none border-0 start-0">
+								<i class="fa fa-search opacity-5"></i>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-outline-secondary dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown"><span class="d-none d-md-inline">Payment Status</span><span class="d-inline d-md-none"><i class="fa fa-credit-card"></i></span> &nbsp;</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">ALL</a>
+						<a class="dropdown-item" href="#">OPEN</a>
+						<a class="dropdown-item" href="#">CLOSED</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">REMOVED</a>
+					</div>
+					<button class="btn btn-outline-secondary dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown"><span class="d-none d-md-inline">Fulfillment status</span><span class="d-inline d-md-none"><i class="fa fa-check"></i></span> &nbsp;</button>
+					<div class="dropdown-menu dropdown-menu-end">
+						<a class="dropdown-item" href="#">UNFULFILLED</a>
+						<a class="dropdown-item" href="#">UNPAID</a>
+						<a class="dropdown-item" href="#">LOCAL DELIVERY</a>
+						<div role="separator" class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">MISSING</a>
+					</div>
+				</div>
+				<!-- END input-group -->
+				<div class="d-flex gap-4 text-uppercase text-nowrap mb-n2">
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-download fa-fw text-body text-opacity-25"></i> EXPORT</a></div>
+					<div><a href="#" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none"><i class="fa fa-upload fa-fw text-body text-opacity-25"></i> IMPORT</a></div>
+					<div>
+						<a href="#" data-bs-toggle="dropdown" class="fw-semibold text-body text-opacity-75 d-flex align-items-center gap-2 text-decoration-none">More Actions <b class="caret opacity-25"></b></a>
+						<div class="dropdown-menu position-fixed mt-8px">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div role="separator" class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flex-1 overflow-hidden d-flex">
+				<!-- BEGIN scrollbar -->
+				<div data-scrollbar="true" data-height="100%" id="scrollbar" class="flex-1">
+					<!-- BEGIN table -->
+					<div class="table-responsive">
+						<table class="table table-striped table-sm table-card text-nowrap text-uppercase mb-1">
+							<thead>
+								<tr class="text-uppercase">
+									<th></th>
+									<th>Order</th>
+									<th>Date</th>
+									<th>Customer</th>
+									<th>Total</th>
+									<th>Payment status</th>
+									<th>Fulfillment status</th>
+									<th>Items</th>
+									<th>Delivery method</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product1">
+											<label class="form-check-label" for="product1"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1950</a></td>
+									<td class="align-middle">Thu 26 Nov, 12:23pm</td>
+									<td class="align-middle">Amanda Lee</td>
+									<td class="align-middle">$398.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED</span></td>
+									<td class="align-middle">3 items</td>
+									<td class="align-middle">Free shipping</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product2">
+											<label class="form-check-label" for="product2"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1949</a></td>
+									<td class="align-middle">Thu 26 Nov, 11:54am</td>
+									<td class="align-middle">Leonard Oii</td>
+									<td class="align-middle">$496.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED</span></td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Local pickup</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product3">
+											<label class="form-check-label" for="product3"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1948</a></td>
+									<td class="align-middle">Thu 25 Nov, 11:54pm</td>
+									<td class="align-middle">John Doe</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING</span></td>
+									<td class="align-middle"><span class="badge bg-yellow bg-opacity-15 text-yellow py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED</span></td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product4">
+											<label class="form-check-label" for="product4"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1947</a></td>
+									<td class="align-middle">Thu 25 Nov, 11:53pm</td>
+									<td class="align-middle">Terry Ng</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING</span></td>
+									<td class="align-middle"><span class="badge bg-yellow bg-opacity-15 text-yellow py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED</span></td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product5">
+											<label class="form-check-label" for="product5"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1946</a></td>
+									<td class="align-middle">Thu 25 Nov, 11:52pm</td>
+									<td class="align-middle">Terry Ng</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING</span></td>
+									<td class="align-middle"><span class="badge bg-yellow bg-opacity-15 text-yellow py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED</span></td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product6">
+											<label class="form-check-label" for="product6"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1945</a></td>
+									<td class="align-middle">Thu 24 Nov, 2:43pm</td>
+									<td class="align-middle">Lelouch Wong</td>
+									<td class="align-middle">$900.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-primary bg-opacity-15 text-primary py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> READY FOR PICKUP</span></td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Local pickup</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product7">
+											<label class="form-check-label" for="product7"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1944</a></td>
+									<td class="align-middle">Thu 23 Nov, 2:43pm</td>
+									<td class="align-middle">Cynthia Ting</td>
+									<td class="align-middle">$625.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-primary bg-opacity-15 text-primary py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> READY FOR DELIVERY</span></td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Local pickup</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product8">
+											<label class="form-check-label" for="product8"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1943</a></td>
+									<td class="align-middle">Thu 23 Nov, 11:59am</td>
+									<td class="align-middle">Richard Leong</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PARTIALLY REFUNDED</span></td>
+									<td class="align-middle"><span class="badge bg-danger bg-opacity-15 text-danger py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PARTIALLY FULFILLED</span></td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product9">
+											<label class="form-check-label" for="product9"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1942</a></td>
+									<td class="align-middle">Thu 22 Nov, 8:12am</td>
+									<td class="align-middle">Clement Tang</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED</span></td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product10">
+											<label class="form-check-label" for="product10"></label>
+										</div>
+									</td>
+									<td class="align-middle"><a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1941</a></td>
+									<td class="align-middle">Thu 22 Nov, 7:42am</td>
+									<td class="align-middle">Richard Leong</td>
+									<td class="align-middle">$195.00</td>
+									<td class="align-middle"><span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID</span></td>
+									<td class="align-middle"><span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center"><i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED</span></td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product11">
+											<label class="form-check-label" for="product11"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1942</a>
+									</td>
+									<td class="align-middle">Fri 23 Nov, 8:15am</td>
+									<td class="align-middle">Sarah Connor</td>
+									<td class="align-middle">$250.00</td>
+									<td class="align-middle">
+										<span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED </span>
+									</td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product12">
+											<label class="form-check-label" for="product12"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1943</a>
+									</td>
+									<td class="align-middle">Sat 24 Nov, 9:30am</td>
+									<td class="align-middle">John Doe</td>
+									<td class="align-middle">$120.00</td>
+									<td class="align-middle">
+										<span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">3 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product13">
+											<label class="form-check-label" for="product13"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1944</a>
+									</td>
+									<td class="align-middle">Sun 25 Nov, 10:00am</td>
+									<td class="align-middle">Jane Smith</td>
+									<td class="align-middle">$310.00</td>
+									<td class="align-middle">
+										<span class="badge bg-danger bg-opacity-15 text-danger py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> CANCELLED </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product14">
+											<label class="form-check-label" for="product14"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1945</a>
+									</td>
+									<td class="align-middle">Mon 26 Nov, 11:45am</td>
+									<td class="align-middle">Michael Johnson</td>
+									<td class="align-middle">$175.00</td>
+									<td class="align-middle">
+										<span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED </span>
+									</td>
+									<td class="align-middle">4 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product15">
+											<label class="form-check-label" for="product15"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1946</a>
+									</td>
+									<td class="align-middle">Tue 27 Nov, 12:20pm</td>
+									<td class="align-middle">Emily Davis</td>
+									<td class="align-middle">$80.00</td>
+									<td class="align-middle">
+										<span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product16">
+											<label class="form-check-label" for="product16"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1947</a>
+									</td>
+									<td class="align-middle">Wed 28 Nov, 1:05pm</td>
+									<td class="align-middle">David Brown</td>
+									<td class="align-middle">$230.00</td>
+									<td class="align-middle">
+										<span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED </span>
+									</td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product17">
+											<label class="form-check-label" for="product17"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1948</a>
+									</td>
+									<td class="align-middle">Thu 29 Nov, 2:30pm</td>
+									<td class="align-middle">Olivia Martin</td>
+									<td class="align-middle">$150.00</td>
+									<td class="align-middle">
+										<span class="badge bg-danger bg-opacity-15 text-danger py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> CANCELLED </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">3 items</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product18">
+											<label class="form-check-label" for="product18"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1949</a>
+									</td>
+									<td class="align-middle">Fri 30 Nov, 3:45pm</td>
+									<td class="align-middle">Sophia White</td>
+									<td class="align-middle">$95.00</td>
+									<td class="align-middle">
+										<span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED </span>
+									</td>
+									<td class="align-middle">2 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product19">
+											<label class="form-check-label" for="product19"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1950</a>
+									</td>
+									<td class="align-middle">Sat 1 Dec, 4:20pm</td>
+									<td class="align-middle">James Black</td>
+									<td class="align-middle">$110.00</td>
+									<td class="align-middle">
+										<span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">1 item</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product20">
+											<label class="form-check-label" for="product20"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1951</a>
+									</td>
+									<td class="align-middle">Sun 2 Dec, 5:35pm</td>
+									<td class="align-middle">Charlotte Green</td>
+									<td class="align-middle">$300.00</td>
+									<td class="align-middle">
+										<span class="badge bg-success bg-opacity-15 text-success py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PAID </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> FULFILLED </span>
+									</td>
+									<td class="align-middle">3 items</td>
+									<td class="align-middle">Express</td>
+								</tr>
+								<tr>
+									<td class="w-10px align-middle">
+										<div class="form-check">
+											<input type="checkbox" class="form-check-input" id="product21">
+											<label class="form-check-label" for="product21"></label>
+										</div>
+									</td>
+									<td class="align-middle">
+										<a href="page_order_details.html" class="text-body text-opacity-75 text-decoration-none">#1952</a>
+									</td>
+									<td class="align-middle">Mon 3 Dec, 6:50pm</td>
+									<td class="align-middle">Henry King</td>
+									<td class="align-middle">$220.00</td>
+									<td class="align-middle">
+										<span class="badge bg-warning bg-opacity-15 text-warning py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> PENDING </span>
+									</td>
+									<td class="align-middle">
+										<span class="badge bg-white bg-opacity-15 text-white text-opacity-75 py-4px px-2 fs-9px d-inline-flex align-items-center">
+											<i class="fa fa-circle opacity-5 fs-4px fa-fw me-2"></i> UNFULFILLED </span>
+									</td>
+									<td class="align-middle">4 items</td>
+									<td class="align-middle">Standard</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- END table -->
+				</div>
+				<!-- END scrollbar -->
+			</div>
+			<div class="p-3 border-top" data-scrollbar="true">
+				<div class="d-lg-flex align-items-center gap-3">
+					<div class="text-body text-opacity-50 flex-1 text-lg-start text-center mb-2 mb-lg-0">
+						Showing <span class="text-body">1 to 10</span> of <span class="text-body">57</span> entries
+					</div>
+					<ul class="pagination pagination-sm mb-0 justify-content-center">
+						<li class="page-item disabled"><a class="page-link">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item active"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#">6</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='' }}

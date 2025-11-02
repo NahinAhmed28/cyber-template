@@ -1,0 +1,679 @@
+{{> head pageTitle='Profile' pageCss='
+	<link href="assets/plugins/lity/dist/lity.min.css" rel="stylesheet" />
+'}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app">
+		{{> app-header }}
+		
+		{{> app-sidebar profileClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content profile p-0">
+			<!-- BEGIN profile-container -->
+			<div class="profile-container h-100 overflow-hidden">
+				<!-- BEGIN profile-sidebar -->
+				<div class="profile-sidebar" data-height="100%" data-scrollbar="true">
+					<div class="profile-img">
+						<img src="assets/img/profile.jpg" alt="" />
+					</div>
+					<!-- profile info -->
+					<h5 class="mb-1">John Smith</h5>
+					<div class="mb-3 text-body text-opacity-50 fw-bold">@johnsmith</div>
+					<p>
+						Principal UXUI Design & Brand Architecture for Cyber. Creator of SeanTheme.
+						Bringing the world closer together. Studied Computer Science and Psychology at Harvard University.
+					</p>
+					<div class="mb-1">
+						<i class="fa fa-map-marker-alt fa-fw text-body text-opacity-25 me-1"></i> New York, NY
+					</div>
+					<div class="mb-3">
+						<i class="fa fa-link fa-fw text-body text-opacity-25 me-1"></i> seantheme.com/cyber
+					</div>
+			
+					<hr class="mt-4 mb-4">
+			
+					<!-- people-to-follow -->
+					<div class="fw-bold mb-3 fs-5">People to follow</div>
+					<div class="d-flex align-items-center mb-3">
+						<img src="assets/img/user/user-1.jpg" alt="" width="30" />
+						<div class="flex-fill px-3">
+							<div class="fw-bold text-truncate w-100px">Noor Rowe</div>
+							<div class="text-body text-opacity-50">3.1m followers</div>
+						</div>
+						<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+					</div>
+					<div class="d-flex align-items-center mb-3">
+						<img src="assets/img/user/user-2.jpg" alt="" width="30" />
+						<div class="flex-fill px-3">
+							<div class="fw-bold text-truncate w-100px">Abbey Parker</div>
+							<div class="text-body text-opacity-50">302k followers</div>
+						</div>
+						<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+					</div>
+					<div class="d-flex align-items-center mb-3">
+						<img src="assets/img/user/user-3.jpg" alt="" width="30" />
+						<div class="flex-fill px-3">
+							<div class="fw-bold text-truncate w-100px">Savannah Nicholson</div>
+							<div class="text-body text-opacity-50">720k followers</div>
+						</div>
+						<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+					</div>
+					<div class="d-flex align-items-center mb-3">
+						<img src="assets/img/user/user-4.jpg" alt="" width="30" />
+						<div class="flex-fill px-3">
+							<div class="fw-bold text-truncate w-100px">Kenny Bright</div>
+							<div class="text-body text-opacity-50">1.4m followers</div>
+						</div>
+						<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+					</div>
+					<div class="d-flex align-items-center">
+						<img src="assets/img/user/user-5.jpg" alt="" width="30" />
+						<div class="flex-fill px-3">
+							<div class="fw-bold text-truncate w-100px">Cara Poole</div>
+							<div class="text-body text-opacity-50">989k followers</div>
+						</div>
+						<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+					</div>
+				</div>
+				<!-- END profile-sidebar -->
+		
+				<!-- BEGIN profile-content -->
+				<div class="profile-content d-flex flex-column h-100">
+					<div>
+						<ul class="profile-tab nav nav-tabs nav-tabs-v2">
+							<li class="nav-item">
+								<a href="#profile-post" class="nav-link active" data-bs-toggle="tab">
+									<div class="nav-field">POSTS</div>
+									<div class="nav-value">382</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#profile-followers" class="nav-link" data-bs-toggle="tab">
+									<div class="nav-field">FOLLOWERS</div>
+									<div class="nav-value">1.3m</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#profile-media" class="nav-link" data-bs-toggle="tab">
+									<div class="nav-field">PHOTOS</div>
+									<div class="nav-value">1,397</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#profile-video" class="nav-link" data-bs-toggle="tab">
+									<div class="nav-field">VIDEOS</div>
+									<div class="nav-value">120</div>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#profile-followers" class="nav-link" data-bs-toggle="tab">
+									<div class="nav-field">FOLLOWING</div>
+									<div class="nav-value">2,592</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="profile-content-container flex-1" data-scrollbar="true" data-height="100%">
+						<div class="row gx-4">
+							<div class="col-xl-8">
+								<div class="tab-content p-0">
+									<!-- BEGIN tab-pane -->
+									<div class="tab-pane fade show active" id="profile-post">
+										<div class="card mb-3">		
+											<div class="card-body">
+												<div class="d-flex align-items-center mb-3">
+													<a href="#"><img src="assets/img/user/user-9.jpg" alt="" width="36" /></a>
+													<div class="flex-fill ps-2">
+														<div class="fw-bold text-body text-opacity-50"><a href="#" class="text-decoration-none text-body">Clyde Stanley</a> at <a href="#" class="text-decoration-none text-body">South Lake Tahoe, California</a></div>
+														<div class="small text-body text-opacity-50">MARCH 16</div>
+													</div>
+												</div>							
+												<!-- post content -->
+												<p class="mb-2">Best vacation of 2025</p>
+												<div class="profile-img-list mx-n3">
+													<div class="profile-img-list-item main"><a href="assets/img/gallery/gallery-1.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-1.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-2.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-2.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-3.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-3.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-4.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-4.jpg)"></span></a></div>
+													<div class="profile-img-list-item with-number">
+														<a href="assets/img/gallery/gallery-5.jpg" data-lity class="profile-img-list-link">
+															<span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-5.jpg)"></span>
+															<div class="profile-img-number">+12</div>
+														</a>
+													</div>
+												</div>
+												
+												<div class="border mt-3">
+													<!-- post action -->
+													<div class="row text-center gx-2">
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-hand-thumbs-up-fill me-1 d-block d-sm-inline opacity-5"></i> LIKES
+															</a>
+														</div>
+														<div class="col border-start border-end">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-chat-left-fill me-1 d-block d-sm-inline opacity-5"></i> COMMENT
+															</a>
+														</div>
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-share-fill me-1 d-block d-sm-inline opacity-5"></i> SHARE
+															</a>
+														</div>
+													</div>
+												</div>
+												<div class="d-flex align-items-center border border-top-0">
+													<div class="p-2"><img src="assets/img/user/user-9.jpg" alt="" width="20" /></div>
+													<div class="flex-fill">
+														<div class="position-relative d-flex align-items-center">
+															<input type="text" class="form-control ps-1 pe-5 border-0" placeholder="Write a comment...">
+															<div class="position-absolute end-0 text-center">
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-smile opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-camera opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-video opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-3"><i class="fa fa-fw fa-paw opacity-5"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="card mb-3">
+											<div class="card-body">
+												<!-- post header -->
+												<div class="d-flex align-items-center mb-3">
+													<a href="#"><img src="assets/img/user/user-9.jpg" alt="" width="36" /></a>
+													<div class="flex-fill ps-2">
+														<div class="fw-bold text-body text-opacity-50"><a href="#" class="text-decoration-none text-body">Clyde Stanley</a> is watching <a href="#" class="text-decoration-none text-body">PATAGONIA 8k</a></div>
+														<div class="small text-body text-opacity-50">MARCH 12</div>
+													</div>
+												</div>
+				
+												<!-- post content -->
+												<p class="mb-2">Nice PATAGONIA footage in 8K</p>
+												<div class="ratio ratio-16x9">
+													<iframe src="https://www.youtube.com/embed/ChOhcHD8fBA?showinfo=0"></iframe>
+												</div>
+												
+												<div class="border mt-3">
+													<!-- post action -->
+													<div class="row text-center gx-2">
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-hand-thumbs-up-fill me-1 d-block d-sm-inline opacity-5"></i> LIKES
+															</a>
+														</div>
+														<div class="col border-start border-end">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-chat-left-fill me-1 d-block d-sm-inline opacity-5"></i> COMMENT
+															</a>
+														</div>
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-share-fill me-1 d-block d-sm-inline opacity-5"></i> SHARE
+															</a>
+														</div>
+													</div>
+												</div>
+												<div class="d-flex align-items-center border border-top-0">
+													<div class="p-2"><img src="assets/img/user/user-9.jpg" alt="" width="20" /></div>
+													<div class="flex-fill">
+														<div class="position-relative d-flex align-items-center">
+															<input type="text" class="form-control ps-1 pe-5 border-0" placeholder="Write a comment...">
+															<div class="position-absolute end-0 text-center">
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-smile opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-camera opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-video opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-3"><i class="fa fa-fw fa-paw opacity-5"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card mb-3">
+											<div class="card-body">
+												<!-- post header -->
+												<div class="d-flex align-items-center mb-3">
+													<a href="#"><img src="assets/img/user/user-9.jpg" alt="" width="36" /></a>
+													<div class="flex-fill ps-2">
+														<div class="fw-bold text-body text-opacity-50"><a href="#" class="text-decoration-none text-body">Clyde Stanley</a></div>
+														<div class="small text-body text-opacity-50">MARCH 4</div>
+													</div>
+												</div>
+				
+												<!-- post content -->
+												<p class="mb-2">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque sodales urna justo, ac ultrices magna consectetur id.<br><br>
+													Donec tempor ligula sit amet nunc porta, sed aliquam leo sagittis.<br>
+													Ut auctor congue efficitur. Praesent aliquam pulvinar neque, placerat semper massa elementum et.
+												</p>
+												
+												<div class="border mt-3">
+													<!-- post action -->
+													<div class="row text-center gx-2">
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-hand-thumbs-up-fill me-1 d-block d-sm-inline opacity-5"></i> LIKES
+															</a>
+														</div>
+														<div class="col border-start border-end">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-chat-left-fill me-1 d-block d-sm-inline opacity-5"></i> COMMENT
+															</a>
+														</div>
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-share-fill me-1 d-block d-sm-inline opacity-5"></i> SHARE
+															</a>
+														</div>
+													</div>
+												</div>
+												<div class="d-flex align-items-center border border-top-0">
+													<div class="p-2"><img src="assets/img/user/user-9.jpg" alt="" width="20" /></div>
+													<div class="flex-fill">
+														<div class="position-relative d-flex align-items-center">
+															<input type="text" class="form-control ps-1 pe-5 border-0" placeholder="Write a comment...">
+															<div class="position-absolute end-0 text-center">
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-smile opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-camera opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-video opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-3"><i class="fa fa-fw fa-paw opacity-5"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="card">
+											<div class="card-body">
+												<!-- post header -->
+												<div class="d-flex align-items-center mb-3">
+													<a href="#"><img src="assets/img/user/user-9.jpg" alt="" width="36" /></a>
+													<div class="flex-fill ps-2">
+														<div class="fw-bold text-body text-opacity-50"><a href="#" class="text-decoration-none text-body">Clyde Stanley</a> at <a href="#" class="text-decoration-none text-body">United States</a></div>
+														<div class="small text-body text-opacity-50">MAY 5</div>
+													</div>
+												</div>
+					
+												<!-- post content -->
+												<p class="mb-2">Business Trip</p>
+												<div class="profile-img-list">
+													<div class="profile-img-list-item main"><a href="assets/img/gallery/gallery-5.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-5.jpg)"></span></a></div>
+													<div class="profile-img-list-item main"><a href="assets/img/gallery/gallery-6.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-6.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-7.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-7.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-8.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-8.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-9.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-9.jpg)"></span></a></div>
+													<div class="profile-img-list-item"><a href="assets/img/gallery/gallery-10.jpg" data-lity class="profile-img-list-link"><span class="profile-img-content" style="background-image: url(assets/img/gallery/gallery-10.jpg)"></span></a></div>
+												</div>
+												
+												<div class="border mt-3">
+													<!-- post action -->
+													<div class="row text-center gx-2">
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-hand-thumbs-up-fill me-1 d-block d-sm-inline opacity-5"></i> LIKES
+															</a>
+														</div>
+														<div class="col border-start border-end">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-chat-left-fill me-1 d-block d-sm-inline opacity-5"></i> COMMENT
+															</a>
+														</div>
+														<div class="col">
+															<a href="#" class="text-body text-opacity-50 text-decoration-none d-block p-2">
+																<i class="bi bi-share-fill me-1 d-block d-sm-inline opacity-5"></i> SHARE
+															</a>
+														</div>
+													</div>
+												</div>
+												<div class="d-flex align-items-center border border-top-0">
+													<div class="p-2"><img src="assets/img/user/user-9.jpg" alt="" width="20" /></div>
+													<div class="flex-fill">
+														<div class="position-relative d-flex align-items-center">
+															<input type="text" class="form-control ps-1 pe-5 border-0" placeholder="Write a comment...">
+															<div class="position-absolute end-0 text-center">
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-smile opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-camera opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-2"><i class="fa fa-fw fa-video opacity-5"></i></a>
+																<a href="#" class="text-body text-opacity-50 me-3"><i class="fa fa-fw fa-paw opacity-5"></i></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<!-- END tab-pane -->
+						
+									<!-- BEGIN tab-pane -->
+									<div class="tab-pane fade" id="profile-followers">
+										<div class="list-group">
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-1.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Ethel Wilkes</a></div>
+													<div class="text-body text-opacity-50">North Raundspic</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-2.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Shanaya Hansen</a></div>
+													<div class="text-body text-opacity-50">North Raundspic</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-3.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">James Allman</a></div>
+													<div class="text-body text-opacity-50">North Raundspic</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-4.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Marie Welsh</a></div>
+													<div class="text-body text-opacity-50">Crencheporford</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-5.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Lamar Kirkland</a></div>
+													<div class="text-body text-opacity-50">Prince Ewoodswan</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-6.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Bentley Osborne</a></div>
+													<div class="text-body text-opacity-50">Red Suvern</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-7.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Ollie Goulding</a></div>
+													<div class="text-body text-opacity-50">Doa</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-8.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Hiba Calvert</a></div>
+													<div class="text-body text-opacity-50">Stemunds</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-9.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Rivka Redfern</a></div>
+													<div class="text-body text-opacity-50">Fallnee</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+											<div class="list-group-item d-flex align-items-center">
+												<img src="assets/img/user/user-10.jpg" alt="" width="40" class="ms-n2" />
+												<div class="flex-fill px-3">
+													<div><a href="#" class="text-body fw-bold text-decoration-none">Roshni Fernandez</a></div>
+													<div class="text-body text-opacity-50">Mount Lerdo</div>
+												</div>
+												<a href="#" class="btn btn-sm btn-outline-secondary">FOLLOW</a>
+											</div>
+										</div>
+										<div class="text-center p-3"><a href="#" class="text-body text-decoration-none d-inline-flex align-items-center gap-2">SHOW MORE <b class="caret opacity-5"></b></a></div>
+									</div>
+									<!-- END tab-pane -->
+						
+									<!-- BEGIN tab-pane -->
+									<div class="tab-pane fade" id="profile-media">
+										<div class="card mb-3">
+											<div class="card-header fw-bold">MAY 20</div>
+											<div class="card-body">
+												<div class="widget-img-list">
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-1.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-1.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-2.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-2.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-3.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-3.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-4.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-4.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-5.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-5.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-6.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-6.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-7.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-7.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-8.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-8.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-9.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-9.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-10.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-10.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-11.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-11.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-12.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-12.jpg)"></span></a></div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="card">
+											<div class="card-header fw-bold">MAY 16</div>
+											<div class="card-body">
+												<div class="widget-img-list">
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-13.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-13.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-14.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-14.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-15.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-15.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-16.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-16.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-17.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-17.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-18.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-18.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-19.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-19.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-20.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-20.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-21.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-21.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-22.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-22.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-23.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-23.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-24.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-24.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-25.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-25.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-26.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-26.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-27.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-27.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-28.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-28.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-29.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-29.jpg)"></span></a></div>
+													<div class="widget-img-list-item"><a href="assets/img/gallery/gallery-30.jpg" data-lity><span class="img" style="background-image: url(assets/img/gallery/gallery-30.jpg)"></span></a></div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="text-center p-3"><a href="#" class="text-body text-decoration-none d-inline-flex align-items-center gap-2">SHOW MORE <b class="caret opacity-5"></b></a></div>
+									</div>
+									<!-- END tab-pane -->
+						
+									<!-- BEGIN tab-pane -->
+									<div class="tab-pane fade" id="profile-video">
+										<div class="card mb-3">
+											<div class="card-header fw-bold bg-transparent">COLLECTIONS #1</div>
+											<div class="card-body">
+												<div class="row gx-1">
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=RQ5ljyGg-ig" data-lity="">
+															<img src="https://img.youtube.com/vi/RQ5ljyGg-ig/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=5lWkZ-JaEOc" data-lity="">
+															<img src="https://img.youtube.com/vi/5lWkZ-JaEOc/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=9ZfN87gSjvI" data-lity="">
+															<img src="https://img.youtube.com/vi/9ZfN87gSjvI/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=w2H07DRv2_M" data-lity="">
+															<img src="https://img.youtube.com/vi/w2H07DRv2_M/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=PntG8KEVjR8" data-lity="">
+															<img src="https://img.youtube.com/vi/PntG8KEVjR8/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=q8kxKvSQ7MI" data-lity="">
+															<img src="https://img.youtube.com/vi/q8kxKvSQ7MI/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=cutu3Bw4ep4" data-lity="">
+															<img src="https://img.youtube.com/vi/cutu3Bw4ep4/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=gCspUXGrraM" data-lity="">
+															<img src="https://img.youtube.com/vi/gCspUXGrraM/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="card mb-3">
+											<div class="card-header fw-bold bg-transparent">COLLECTIONS #2</div>
+											<div class="card-body">
+												<div class="row gx-1">
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=COtpTM1MpAA" data-lity="">
+															<img src="https://img.youtube.com/vi/COtpTM1MpAA/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=8NVkGHVOazc" data-lity="">
+															<img src="https://img.youtube.com/vi/8NVkGHVOazc/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=ZtT3jaTcCsY" data-lity="">
+															<img src="https://img.youtube.com/vi/ZtT3jaTcCsY/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=Dmw0ucCv8aQ" data-lity="">
+															<img src="https://img.youtube.com/vi/Dmw0ucCv8aQ/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=r1d7ST2TG2U" data-lity="">
+															<img src="https://img.youtube.com/vi/r1d7ST2TG2U/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=WUR-XWBcHvs" data-lity="">
+															<img src="https://img.youtube.com/vi/WUR-XWBcHvs/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=A7sQ8RWj0Cw" data-lity="">
+															<img src="https://img.youtube.com/vi/A7sQ8RWj0Cw/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+													<div class="col-md-4 col-sm-6 mb-1">
+														<a href="https://www.youtube.com/watch?v=IMN2VfiXls4" data-lity="">
+															<img src="https://img.youtube.com/vi/IMN2VfiXls4/mqdefault.jpg" alt="" class="d-block w-100">
+														</a>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="text-center p-3"><a href="#" class="text-body text-decoration-none d-inline-flex align-items-center gap-2">SHOW MORE <b class="caret opacity-5"></b></a></div>
+									</div>
+									<!-- END tab-pane -->
+								</div>
+							</div>
+							<div class="col-xl-4">
+								<div class="desktop-sticky-top top-0 d-none d-lg-block">
+									<div class="card mb-3">
+										<div class="card-header fw-bold d-flex">
+											<span class="flex-1">TRENDS FOR YOU</span>
+												<a href="#" class="text-body text-opacity-50"><i class="fa fa-cog"></i></a>
+										</div>
+										<div class="list-group list-group-flush">
+											<div class="list-group-item px-3">
+												<div class="text-body text-opacity-50"><small><strong>TRENDING WORLDWIDE</strong></small></div>
+												<div class="fw-bold mb-2">#BreakingNews</div>
+												<a href="#" class="card text-body text-decoration-none mb-1">
+													<div class="card-body">
+														<div class="row no-gutters">
+															<div class="col-md-8">
+																<div class="small text-body text-opacity-50 mb-1 mt-n1">Space</div>
+																<div class="h-40px fs-13px overflow-hidden mb-n1">Distant star-core detonation marks brightest energy surge ever recorded in human history</div>
+															</div>
+															<div class="col-md-4 d-flex">
+																<div class="h-100 w-100" style="background: url(assets/img/gallery/news-1.jpg) center; background-size: cover;"></div>
+															</div>
+														</div>
+													</div>
+													
+												</a>
+												<div><small class="text-body text-opacity-50">1.89m share</small></div>
+											</div>
+											<div class="list-group-item px-3">
+												<div class="fw-bold mb-2">#TrollingForGood</div>
+												<div class="fs-13px mb-1">Activate your Inner Troll. Encrypt joy. Upload kindness. Disrupt negativity across CyberNet.</div>
+												<div><small class="text-body text-opacity-50"><i class="fa fa-external-link-square-alt"></i> Sponsored by: Cyber Trolls Syndicate</small></div>
+											</div>
+											<div class="list-group-item px-3">
+												<div class="text-body text-opacity-50"><small><strong>TRENDING WORLDWIDE</strong></small></div>
+												<div class="fw-bold mb-2">#CronaOutbreak</div>
+												<div class="fs-13px mb-1">BioVirus Strain CR-21 detected in 210+ Earth sectors. ImmunoFleets deployed. Stay under dome protocols.</div>
+												<div><small class="text-body text-opacity-50">49.3m share</small></div>
+											</div>
+											<div class="list-group-item px-3">
+												<div class="text-body text-opacity-50"><small><strong>GEOLOCATED Ð NEW YORK HAB-ZONE</strong></small></div>
+												<div class="fw-bold mb-2">#PandemicAlert</div>
+												<a href="#" class="card mb-1 text-body text-decoration-none">
+													<div class="card-body">
+														<div class="row no-gutters">
+															<div class="col-md-8">
+																<div class="text-body text-opacity-50 mt-n1">Event: US Flight Grid Lockdown</div>
+																<div class="h-40px fs-13px overflow-hidden mb-n1">Orbital and atmospheric travel suspended by United States AirMobility Authority amid viral surge.</div>
+															</div>
+															<div class="col-md-4 d-flex">
+																<div class="h-100 w-100" style="background: url(assets/img/gallery/news-2.jpg) center; background-size: cover;"></div>
+															</div>
+														</div>
+													</div>
+													
+												</a>
+												<div><small class="text-body text-opacity-50">821k share</small></div>
+											</div>
+											<a href="#" class="list-group-item list-group-action text-center">
+												SHOW MORE
+											</a>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END profile-content -->
+			</div>
+			<!-- END profile-container -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='
+	<script src="assets/plugins/lity/dist/lity.min.js"></script>
+'}}

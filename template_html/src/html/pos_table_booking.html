@@ -1,0 +1,2130 @@
+{{> head pageTitle='POS - Table Booking' pageCss=' 
+	<link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
+	<link href="assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" />
+'}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-content-full-height app-without-sidebar app-without-header">
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0">
+			<!-- BEGIN pos -->
+			<div class="pos pos-vertical pos-with-header" id="pos">
+				<!-- BEGIN pos-container -->
+				<div class="pos-container">
+					<!-- BEGIN pos-header -->
+					<div class="pos-header">
+						<div class="logo">
+							<a href="index.html">
+								<div class="logo-img"><iconify-icon icon="solar:widget-line-duotone"></iconify-icon></div>
+								<div class="logo-text">POS SYSTEM</div>
+							</a>
+						</div>
+						<div class="time" id="time">00:00</div>
+						<div class="nav">
+							<div class="nav-item">
+								<a href="pos_counter_checkout.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Counter Checkout">
+									<iconify-icon icon="solar:cart-3-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Counter</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_kitchen_order.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Kitchen Order">
+									<iconify-icon icon="solar:documents-minimalistic-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Kitchen</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_table_booking.html" class="nav-link active" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Table Booking">
+									<iconify-icon icon="solar:calendar-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Table</div>
+								</a>
+							</div>
+							<div class="nav-item">
+								<a href="pos_menu_stock.html" class="nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Menu Stock">
+									<iconify-icon icon="solar:box-line-duotone" class="nav-icon"></iconify-icon>
+									<div class="nav-text text-uppercase">Stock</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- END pos-header -->
+				
+					<!-- BEGIN pos-content -->
+					<div class="pos-content">
+						<div class="pos-content-container p-0 d-flex flex-column overflow-hidden h-100">
+							<div class="d-md-flex align-items-center px-3 py-2 border-bottom">
+								<div class="flex-1 d-lg-flex align-items-center gap-3">
+									<div class="fs-5 mb-lg-0 mb-1 text-uppercase fw-semibold">Available Table (8/20)</div>
+									<div class="mb-2 mb-md-0 d-inline-flex text-white text-opacity-75 border">
+										<div class="d-flex align-items-center border-end px-3 py-1">
+											<i class="fa fa-circle fa-fw text-body text-opacity-25 fs-4px me-2"></i> Completed
+										</div>
+										<div class="d-flex align-items-center border-end px-3 py-1">
+											<i class="fa fa-circle fa-fw text-warning fs-4px me-2"></i> Upcoming
+										</div>
+										<div class="d-flex align-items-center px-3 py-1">
+											<i class="fa fa-circle fa-fw text-success fs-4px me-2"></i> In-progress
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="input-group date mb-0 w-250px" data-render="datepicker" data-date-format="dd-mm-yyyy" data-date-start-date="Date.default">
+										<input type="text" class="form-control" placeholder="Today's">
+										<span class="input-group-text input-group-addon">
+											<i class="far fa-calendar fa-lg"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="p-1px flex-1" data-scrollbar="true" data-height="100%">
+								<div class="row g-0">
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">01</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Reserved by Sean</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">Reserved by Irene Wong (4pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">Reserved by Irene Wong (4pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">02</div>
+															<div class="desc text-uppercase">max 8 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Reserved by John (8pax)</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">Reserved by Terry (6pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">03</div>
+															<div class="desc text-uppercase">max 8 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">Reserved by Lisa (8pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">Reserved by Lisa (8pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">Reserved by Terry</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">04</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">Reserved by Richard (4pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">Reserved by Richard (4pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">Reserved by Paul (3pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">Reserved by Paul (3pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">Reserved by Paul (3pax)</div>
+														<div class="status upcoming"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">05</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">06</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">07</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">08</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">09</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">10</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">11</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">12</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">13</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">14</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">15</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">16</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">17</div>
+															<div class="desc text-uppercase">max 4 pax</div>
+														</div>
+														<div class="text-success">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">18</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">19</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+									<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 p-1px">
+										<a href="#" data-bs-toggle="modal" data-bs-target="#modalPosBooking" class="pos-table-booking">
+											<div class="pos-table-booking-container">
+												<div class="pos-table-booking-header">
+													<div class="d-flex align-items-center">
+														<div class="flex-1">
+															<div class="title">TABLE</div>
+															<div class="no">20</div>
+															<div class="desc text-uppercase">max 6 pax</div>
+														</div>
+														<div class="text-body text-opacity-25">
+															<iconify-icon icon="solar:check-circle-line-duotone" class="fs-36px"></iconify-icon>
+														</div>
+													</div>
+												</div>
+												<div class="pos-table-booking-body text-uppercase">
+													<div class="booking">
+														<div class="time">08:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00am</div>
+														<div class="info">Walk in breakfast</div>
+														<div class="status completed"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">11:00am</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking highlight">
+														<div class="time">12:00pm</div>
+														<div class="info">Walk in lunch</div>
+														<div class="status in-progress"><i class="fa fa-circle"></i></div>
+													</div>
+													<div class="booking">
+														<div class="time">01:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">02:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">03:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">04:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">05:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">06:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">07:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">08:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">09:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+													<div class="booking">
+														<div class="time">10:00pm</div>
+														<div class="info">-</div>
+														<div class="status"></div>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END pos-content -->
+				</div>
+				<!-- END pos-container -->
+			</div>
+			<!-- END pos -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+	<!-- BEGIN #modalPosBooking -->
+	<div class="modal modal-pos fade" id="modalPosBooking">
+		<!-- BEGIN modal-dialog -->
+		<div class="modal-dialog modal-lg">
+			<!-- BEGIN modal-content -->
+			<div class="modal-content">
+				<!-- BEGIN modal-header -->
+				<div class="modal-header align-items-center">
+					<h5 class="modal-title d-flex gap-2 align-items-end text-uppercase">
+						Table 01 
+						<small class="fs-6 text-body text-opacity-50">max 4 pax</small>
+					</h5>
+					<a href="#" data-bs-dismiss="modal" class="ms-auto btn-close"></a>
+				</div>
+				<!-- END modal-header -->
+				<!-- BEGIN modal-body -->
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>08:00AM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>09:00AM</small></div>
+									<input type="text" class="form-control" placeholder="" value="Reserved by Sean" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>10:00AM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>11:00AM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>12:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>01:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>02:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>03:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>04:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>05:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" value="Reserved by Irene Wong (4pax)" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>06:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" value="Reserved by Irene Wong (4pax)" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>07:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>08:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>09:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<div class="input-group">
+									<div class="input-group-text w-65px"><small>10:00PM</small></div>
+									<input type="text" class="form-control" placeholder="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END modal-body -->
+				<!-- BEGIN modal-footer -->
+				<div class="modal-footer">
+					<a href="#" class="btn btn-secondary w-100px" data-bs-dismiss="modal">CANCEL</a>
+					<button type="submit" class="btn btn-success w-100px">BOOK</button>
+				</div>
+				<!-- END modal-footer -->
+			</div>
+			<!-- END modal-content -->
+		</div>
+		<!-- END modal-dialog -->
+	</div>
+	<!-- END #modalPosBooking -->
+	
+{{> script pageJs='
+	<script src="assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+	<script src="assets/js/demo/pos-table-booking.demo.js"></script>
+'}}

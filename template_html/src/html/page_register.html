@@ -1,0 +1,87 @@
+{{> head pageTitle='Register' pageCss='' }}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-full-height app-without-header">
+		<!-- BEGIN register -->
+		<div class="register">
+			<!-- BEGIN register-content -->
+			<div class="register-content">
+				<form action="index.html" method="GET" name="register_form">
+					<div class="display-4 text-center text-body text-opacity-75"><iconify-icon icon="solar:pen-new-round-line-duotone"></iconify-icon></div>
+					<h1 class="text-center">SIGN UP</h1>
+					<div class="text-body text-opacity-50 text-center mb-4 fs-6 text-uppercase">
+						One Admin ID is all you need to access all the Admin services.
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Name <span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-6" placeholder="e.g John Smith" value="" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Email Address <span class="text-danger">*</span></label>
+						<input type="text" class="form-control form-control-lg fs-6" placeholder="username@address.com" value="" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Password <span class="text-danger">*</span></label>
+						<input type="password" class="form-control form-control-lg fs-6" value="" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Confirm Password <span class="text-danger">*</span></label>
+						<input type="password" class="form-control form-control-lg fs-6" value="" />
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Country <span class="text-danger">*</span></label>
+						<select class="form-select">
+							<option>United States</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Gender <span class="text-danger">*</span></label>
+						<select class="form-select form-select-lg fs-6">
+							<option>Female</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label class="form-label text-uppercase">Date of Birth <span class="text-danger">*</span></label>
+						<div class="row gx-2">
+							<div class="col-6">
+								<select class="form-select form-select-lg fs-6">
+									<option>Month</option>
+								</select>
+							</div>
+							<div class="col-3">
+								<select class="form-select form-select-lg fs-6">
+									<option>Day</option>
+								</select>
+							</div>
+							<div class="col-3">
+								<select class="form-select form-select-lg fs-6">
+									<option>Year</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="mb-3">
+						<div class="form-check text-uppercase">
+							<input class="form-check-input" type="checkbox" value="" id="customCheck1">
+							<label class="form-check-label" for="customCheck1">I have read and agree to the <a href="#" class="link-secondary">Terms of Use</a> and <a href="#" class="link-secondary">Privacy Policy</a>.</label>
+						</div>
+					</div>
+					<div class="mb-3">
+						<button type="submit" class="btn btn-outline-light btn-lg d-block w-100">SIGN UP</button>
+					</div>
+					<div class="text-body text-opacity-50 text-center text-uppercase">
+						Already have an Admin ID? <a href="page_login.html" class="link-secondary">Sign In</a>
+					</div>
+				</form>
+			</div>
+			<!-- END register-content -->
+		</div>
+		<!-- END register -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+	
+{{> script pageJs='' }}

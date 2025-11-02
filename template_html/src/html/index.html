@@ -1,0 +1,735 @@
+{{> head pageTitle='Dashboard' pageCss='
+	<link href="assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
+'}}
+
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-with-header">
+		{{> app-header }}
+		
+		{{> app-sidebar homeClass=' active' }}
+		
+		<!-- BEGIN #appContent -->
+		<div id="appContent" class="app-content p-0 d-flex flex-column">
+			<div class="app-content-header">
+				<div class="page-header flex-1">
+					SYSTEM <span class="opacity-5 fw-300">ANALYTICS</span>
+				</div>
+				<div class="d-md-flex d-none align-items-center gap-2 fw-semibold m-n1 m-lg-n2 text-center small">
+					<div class="w-80px border">
+						<div class="text-success py-2px bg-black bg-opacity-10 border-bottom">ACTIVE</div>
+						<div class="bg-secondary bg-opacity-25 py-2px">BACKUP</div>
+					</div>
+					<div class="w-80px border">
+						<div class="text-success py-2px bg-black bg-opacity-10 border-bottom">ACTIVE</div>
+						<div class="bg-secondary bg-opacity-25 py-2px">FIREWALL</div>
+					</div>
+					<div class="w-80px border">
+						<div class="text-danger py-2px bg-black bg-opacity-10 border-bottom">DETECTED</div>
+						<div class="bg-secondary bg-opacity-25 py-2px">THREAT</div>
+					</div>
+					<div class="w-80px border">
+						<div class="text-warning py-2px bg-black bg-opacity-10 border-bottom">PENDING</div>
+						<div class="bg-secondary bg-opacity-25 py-2px">SYNC</div>
+					</div>
+					<div class="w-80px border">
+						<div class="text-success py-2px bg-black bg-opacity-10 border-bottom">LOCKED</div>
+						<div class="bg-secondary bg-opacity-25 py-2px">DATA VAULT</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- BEGIN scrollbar -->
+			<div class="flex-1" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN card -->
+				<div class="card border-bottom border-0">
+					<!-- BEGIN card-header -->
+					<div class="card-header with-btn py-1">
+						<div class="fw-semibold">MARKETING CAMPAIGN</div>
+						<div class="hud-line flex-1"></div>
+						<div class="card-header-btn">
+							<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+							<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+							<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+						</div>
+					</div>
+					<!-- END card-header -->
+					<div class="card-body p-0">
+						<div class="row flex-nowrap g-0">
+							<div class="col-lg-10 w-auto flex-1">
+								<div id="chartMain"></div>
+							</div>
+							<div class="col-lg-2 border-start w-250px d-none d-lg-block text-body text-opacity-50">
+								<!-- BEGIN stats -->
+								<div class="p-3">
+									<div class="fw-semibold small">PAGE VIEWS</div>
+									<div class="d-flex align-items-center">
+										<div class="fw-semibold fs-4 text-body flex-1">12,543</div>
+										<div class="w-80px">
+											<div data-generate="apexchart-sparkline"></div>
+										</div>
+									</div>
+								</div>
+								<!-- END stats -->
+								<!-- BEGIN stats -->
+								<div class="p-3 border-top">
+									<div class="fw-semibold small">AVG SESS. DURATION</div>
+									<div class="d-flex align-items-center">
+										<div class="fw-semibold fs-4 text-body flex-1">02:34</div>
+										<div class="w-80px">
+											<div data-generate="apexchart-sparkline"></div>
+										</div>
+									</div>
+								</div>
+								<!-- END stats -->
+								<!-- BEGIN stats -->
+								<div class="p-3 border-top">
+									<div class="fw-semibold small">NEW VISITORS</div>
+									<div class="d-flex align-items-center">
+										<div class="fw-semibold fs-4 text-body flex-1">45.2%</div>
+										<div class="w-80px">
+											<div data-generate="apexchart-sparkline"></div>
+										</div>
+									</div>
+								</div>
+								<!-- END stats -->
+								<!-- BEGIN stats -->
+								<div class="p-3 border-top">
+									<div class="fw-semibold small">BOUNCE RATE</div>
+									<div class="d-flex align-items-center">
+										<div class="fw-semibold fs-4 text-body flex-1">32.6%</div>
+										<div class="w-80px">
+											<div data-generate="apexchart-sparkline"></div>
+										</div>
+									</div>
+								</div>
+								<!-- END stats -->
+								<!-- BEGIN stats -->
+								<div class="p-3 border-top">
+									<div class="fw-semibold small">TOP REFERRING SITES</div>
+									<div class="d-flex align-items-center">
+										<div class="fw-semibold fs-4 text-body flex-1">Google</div>
+										<div class="w-80px">
+											<div data-generate="apexchart-sparkline"></div>
+										</div>
+									</div>
+								</div>
+								<!-- END stats -->
+								<!-- BEGIN stats -->
+								<div class="p-3 d-flex align-items-center border-top">
+									<div class="flex-1">
+										<div class="fw-semibold small">COUNTRIES REACH</div>
+										<div class="fw-semibold fs-4 text-body">87</div>
+									</div>
+									<div class="w-80px">
+										<div data-generate="apexchart-sparkline"></div>
+									</div>
+								</div>
+								<!-- END stats -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END card -->
+				
+				<!-- BEGIN row -->
+				<div class="row g-0 border-bottom">
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-end-0 border-lg-end">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">SALES PERFORMANCE</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body p-0 text-uppercase">
+								<!-- BEGIN row -->
+								<div class="row row-grid g-0">
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:dollar-minimalistic-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">REVENUE</div>
+												<div class="fs-6 fw-semibold text-body">$7.5m</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:users-group-rounded-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">CUSTOMERS</div>
+												<div class="fs-6 fw-semibold text-body">45k</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END row -->
+								
+								<!-- BEGIN row -->
+								<div class="row row-grid g-0">
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:hand-money-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">PROFIT</div>
+												<div class="fs-6 fw-semibold text-body">$3.2m</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:widget-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">LAUNCHES</div>
+												<div class="fs-6 fw-semibold text-body">4</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END row -->
+								
+								<!-- BEGIN row -->
+								<div class="row row-grid border-bottom g-0">
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:plain-3-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">VISITS</div>
+												<div class="fs-6 fw-semibold text-body">1.3m</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-6 px-3 py-2">
+										<div class="d-flex gap-3 align-items-center">
+											<div class="fs-26px text-theme d-flex"><iconify-icon icon="solar:shop-2-line-duotone"></iconify-icon></div>
+											<div class="flex-1">
+												<div class="fw-semibold text-body text-opacity-50 small">SALES</div>
+												<div class="fs-6 fw-semibold text-body">$8.9m</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END row -->
+								
+								<!-- BEGIN stats -->
+								<div class="p-3">
+									<div class="d-flex align-items-center mb-1">
+										<span class="w-15px h-15px d-flex align-items-center bg-theme text-black justify-content-center">1</span>
+										<span class="flex-1 ps-2">NORTH AMERICA REGION</span>
+										<span class="w-100px">
+											<div class="progress h-3px bg-theme bg-opacity-10">
+												<div class="progress-bar bg-theme" style="width: 75%"></div>
+											</div>
+										</span>
+										<span class="w-50px text-end fw-semibold">$700k</span>
+									</div>
+									<div class="d-flex align-items-center mb-1">
+										<span class="w-15px h-15px d-flex align-items-center bg-theme bg-opacity-75 text-black justify-content-center">2</span>
+										<span class="flex-1 ps-2">EUROPE REGION</span>
+										<span class="w-100px">
+											<div class="progress h-3px bg-theme bg-opacity-10">
+												<div class="progress-bar bg-theme bg-opacity-75" style="width: 85%"></div>
+											</div>
+										</span>
+										<span class="w-50px text-end fw-semibold">$850k</span>
+									</div>
+									<div class="d-flex align-items-center mb-1">
+										<span class="w-15px h-15px d-flex align-items-center bg-theme bg-opacity-50 text-black justify-content-center">3</span>
+										<span class="flex-1 ps-2">ASIA-PACIFIC REGION</span>
+										<span class="w-100px">
+											<div class="progress h-3px bg-theme bg-opacity-10">
+												<div class="progress-bar bg-theme bg-opacity-75" style="width: 60%"></div>
+											</div>
+										</span>
+										<span class="w-50px text-end fw-semibold">$600k</span>
+									</div>
+									<div class="d-flex align-items-center mb-1">
+										<span class="w-15px h-15px d-flex align-items-center bg-white bg-opacity-25 text-black justify-content-center">4</span>
+										<span class="flex-1 ps-2">SOUTH AMERICA REGION</span>
+										<span class="w-100px">
+											<div class="progress h-3px bg-theme bg-opacity-10">
+												<div class="progress-bar bg-white bg-opacity-50" style="width: 90%"></div>
+											</div>
+										</span>
+										<span class="w-50px text-end fw-semibold">$900k</span>
+									</div>
+									<div class="d-flex align-items-center mb-0">
+										<span class="w-15px h-15px d-flex align-items-center bg-white bg-opacity-25 text-black justify-content-center">5</span>
+										<span class="flex-1 ps-2">AFRICA REGION</span>
+										<span class="w-100px">
+											<div class="progress h-3px bg-theme bg-opacity-10">
+												<div class="progress-bar bg-white bg-opacity-25" style="width: 40%"></div>
+											</div>
+										</span>
+										<span class="w-50px text-end fw-semibold">$400k</span>
+									</div>
+								</div>
+								<!-- END stats -->
+							</div>
+							<!-- END card-body -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-lg-top-0 border-top border-end-0 border-lg-end">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">BUSINESS METRICS</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN map -->
+							<div class="position-relative">
+								<div id="worldMap" class="h-200px border-bottom jvectormap-without-padding2 p-32"></div>
+								<div class="text-uppercase">
+									<div class="row row-grid g-0 text-body text-opacity-50 fw-semibold text-center">
+										<div class="col-4 py-2">
+											<div class="small">Active Regions:</div>
+											<div class="fs-5 text-body">27</div>
+										</div>
+										<div class="col-4 py-2">
+											<div class="small">Total Users:</div>
+											<div class="fs-5 text-body">1.2M</div>
+										</div>
+										<div class="col-4 py-2">
+											<div class="small">Live Sessions:</div>
+											<div class="fs-5 text-body">3,482</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END map -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+					
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-lg-top-0 border-top">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">OPERATIONAL OVERVIEW</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body">
+								<div class="d-flex fs-10px">
+									<div class="fs-40px text-theme">
+										<iconify-icon icon="solar:cpu-bolt-line-duotone"></iconify-icon>
+									</div>
+									<div class="flex-1 ps-3">
+										<div>
+											Increased weekly production rate by <span class="text-success fw-semibold">5%</span>, reflecting improved operational performance.
+										</div>
+										<hr class="invisible m-0" />
+										<hr />
+										<div class="row mb-4px gx-0 gap-0 text-truncate">
+											<div class="col-6">
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">CURRENT:</div>
+													<div class="text-white fw-semibold flex-1">1,000 UNITS</div>
+												</div>
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">TARGET:</div>
+													<div class="text-white fw-semibold flex-1">1,200 UNITS</div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">RATE:</div>
+													<div class="text-white fw-semibold flex-1">200 UNITS/W</div>
+												</div>
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">PREV WEEK:</div>
+													<div class="text-white fw-semibold flex-1">190 UNITS</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-body border-top">
+								<div class="d-flex fs-10px">
+									<div class="fs-40px text-theme">
+										<iconify-icon icon="solar:server-square-update-line-duotone"></iconify-icon>
+									</div>
+									<div class="flex-1 ps-3">
+										<div>
+											Reduced system downtime by <span class="text-success fw-semibold">12%</span>, enhancing overall infrastructure reliability.
+										</div>
+										<hr class="invisible m-0" />
+										<hr />
+										<div class="row mb-4px gx-0 gap-0 text-truncate">
+											<div class="col-6">
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">CURRENT:</div>
+													<div class="text-white fw-semibold flex-1">98.2% UPTIME</div>
+												</div>
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">TARGET:</div>
+													<div class="text-white fw-semibold flex-1">99.0% UPTIME</div>
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">GROWTH:</div>
+													<div class="text-white fw-semibold flex-1">+0.8%</div>
+												</div>
+												<div class="d-flex align-items-center">
+													<div class="text-body text-opacity-50 w-70px">PREV WEEK:</div>
+													<div class="text-white fw-semibold flex-1">97.5% UPTIME</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card-body -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+				</div>
+				<!-- END row -->
+				
+				<!-- BEGIN row -->
+				<div class="row g-0">
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-end-0 border-lg-end">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">SALES BY SOCIAL SOURCE</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body border-bottom">
+								<div class="fs-3 fw-semibold text-body">$70,563.43</div>
+								<div class="text-white text-opacity-50 fw-semibold"><span class="text-success">+45.76%</span> vs yesterday</div>
+							</div>
+							<!-- END card-body -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body text-body">
+								<!-- BEGIN widget-list-item -->
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-apple"></i>
+									</div>
+									<div class="flex-1">APPLE STORE</div>
+									<div class="text-body fw-semibold">$34,840.17</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-facebook-f"></i>
+									</div>
+									<div class="flex-1">FACEBOOK</div>
+									<div class="text-body fw-semibold">$12,502.67</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-instagram"></i>
+									</div>
+									<div class="flex-1">INSTAGRAM</div>
+									<div class="text-body fw-semibold">$8,569.75</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-youtube"></i>
+									</div>
+									<div class="flex-1">YOUTUBE</div>
+									<div class="text-body fw-semibold">$6,021.79</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-twitter"></i>
+									</div>
+									<div class="flex-1">TWITTER</div>
+									<div class="text-body fw-semibold">$4,799.20</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-google"></i>
+									</div>
+									<div class="flex-1">GOOGLE</div>
+									<div class="text-body fw-semibold">$3,405.85</div>
+								</div>
+								<div class="d-flex align-items-center mb-1 gap-3">
+									<div class="w-25px h-25px fs-5 bg-theme bg-opacity-10 text-theme d-flex align-items-center justify-content-center">
+										<i class="fab fa-tiktok"></i>
+									</div>
+									<div class="flex-1">TIKTOK</div>
+									<div class="text-body fw-semibold">$424.00</div>
+								</div>
+							</div>
+							<!-- END card-body -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+					
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-lg-top-0 border-top border-end-0 border-lg-end">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">TOP PRODUCTS BY UNITS SOLD</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body">
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-1.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">DJI INSPIRE 33</div>
+										<div>$1,099.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">210</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+								
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-2.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">APPLE WATCH ULTRA PRO</div>
+										<div>$2,499.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">198</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+								
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-3.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">ULTRA PROTECTION HELMET V3</div>
+										<div>$2,499.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">162</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+								
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-4.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">APPLE IPHONE 33 PRO MAX</div>
+										<div>$799.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">130</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+								
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-5.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">MICROSOFT WATCH SERIES X</div>
+										<div>$499.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">120</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+								
+								<!-- BEGIN product -->
+								<div class="d-flex align-items-center gap-3 mb-2 text-body text-opacity-50 fw-semibold">
+									<div class="w-40px h-40px">
+										<img src="assets/img/product/product-6.jpg" class="mw-100 mh-100 object-fit-cover" alt="" />
+									</div>
+									<div class="text-truncate flex-1">
+										<div class="text-body">APPLE GLASS V12 PRO</div>
+										<div>$129.00</div>
+									</div>
+									<div class="text-center">
+										<div class="text-body fs-5">110</div>
+										<div class="fs-8px">SOLD</div>
+									</div>
+								</div>
+								<!-- END product -->
+							</div>
+							<!-- END card-body -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+					
+					<!-- BEGIN col-4 -->
+					<div class="col-lg-4 border-lg-top-0 border-top">
+						<!-- BEGIN card -->
+						<div class="card border-0 h-100">
+							<!-- BEGIN card-header -->
+							<div class="card-header with-btn py-1">
+								<div class="fw-semibold">MARKETING CAMPAIGN</div>
+								<div class="hud-line flex-1"></div>
+								<div class="card-header-btn">
+									<a href="#" data-toggle="card-collapse" class="btn"><i class="bi bi-dash-lg"></i></a>
+									<a href="#" data-toggle="card-expand" class="btn"><i class="bi bi-arrows-fullscreen"></i></a>
+									<a href="#" data-toggle="card-remove" class="btn"><i class="bi bi-x-lg"></i></a>
+								</div>
+							</div>
+							<!-- END card-header -->
+							
+							<!-- BEGIN card-body -->
+							<div class="card-body">
+								<div class="row">
+									<div class="col-6">
+										<div class="fw-semibold text-white text-opacity-50 mb-1">CONVERSION RATE</div>
+										<div class="fs-4 fw-semibold text-body mb-2">12%</div>
+										<div class="text-uppercase text-body text-opacity-50 fw-semibold">
+											<span class="text-body">294k</span> total clicks<br />
+											<span class="text-body">23%</span> click-through rate
+										</div>
+									</div>
+									<div class="col-6">
+										<div class="fw-semibold text-white text-opacity-50 mb-1">USER REACHED</div>
+										<div class="fs-4 fw-semibold text-body mb-2">7.58m</div>
+										<div class="text-uppercase text-body text-opacity-50 fw-semibold">
+											<span class="text-body">23%</span> bounce rate <br />
+											<span class="text-body">85%</span> engagement rate
+										</div>
+									</div>
+								</div>
+								<hr />
+								<div class="d-flex align-items-center">
+									<div class="w-60px">
+										<div class="h-60px h-60px d-flex align-items-center justify-content-center bg-theme bg-opacity-10 text-theme fs-36px">
+											<iconify-icon icon="solar:soundwave-line-duotone"></iconify-icon>
+										</div>
+									</div>
+									<div class="flex-1 ps-3 fs-10px text-truncate text-white">
+										<div class="fw-semibold">PAID SEARCH ADS</div>
+										<div class="text-white text-opacity-50">MON 26/6 - SUN 2/7</div>
+										<div class="d-flex align-items-center">
+											<div class="flex-grow-1">
+												<div class="progress h-4px bg-theme bg-opacity-10">
+													<div class="progress-bar progress-bar-striped bg-theme" data-animation="width" data-value="68%" style="width: 68%"></div>
+												</div>
+											</div>
+											<div class="ms-2 w-30px text-center"><span data-animation="number" data-value="68">68</span>%</div>
+										</div>
+										<div class="text-white text-opacity-50 text-truncate">
+											47.8% people made a purchase after clicking the ad
+										</div>
+									</div>
+								</div>
+								<hr />
+								<div class="d-flex align-items-center">
+									<div class="w-60px">
+										<div class="h-60px h-60px d-flex align-items-center justify-content-center bg-theme bg-opacity-10 text-theme fs-36px">
+											<iconify-icon icon="solar:video-library-line-duotone"></iconify-icon>
+										</div>
+									</div>
+									<div class="flex-1 ps-3 fs-10px text-truncate text-white">
+										<div class="fw-semibold">VIDEO AD CAMPAIGN</div>
+										<div class="text-white text-opacity-50">MON 17/7 - SUN 23/7</div>
+										<div class="d-flex align-items-center">
+											<div class="flex-grow-1">
+												<div class="progress h-4px bg-theme bg-opacity-10">
+													<div class="progress-bar progress-bar-striped bg-theme" data-animation="width" data-value="85%" style="width: 85%"></div>
+												</div>
+											</div>
+											<div class="ms-2 w-30px text-center"><span data-animation="number" data-value="85">85</span>%</div>
+										</div>
+										<div class="text-white text-opacity-50 text-truncate">
+											54.6% viewers watched till the end
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END card-body -->
+						</div>
+						<!-- END card -->
+					</div>
+					<!-- END col-4 -->
+				</div>
+				<!-- END row -->
+			</div>
+			<!-- END scrollbar -->
+		</div>
+		<!-- END #appContent -->
+		
+		{{> app-theme-panel }}
+		
+		{{> app-scroll-top-btn }}
+	</div>
+	<!-- END #app -->
+
+{{> script pageJs='
+	<script src="assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="assets/plugins/jvectormap-content/world-mill.js"></script>
+	<script src="assets/plugins/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="assets/js/demo/dashboard.demo.js"></script>
+'}}
